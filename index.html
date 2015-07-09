@@ -7,7 +7,9 @@
   
 <script src="http://d3js.org/d3.v3.min.js"></script>
 <script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
-
+<script src="geojson/broadband.json"></script>
+      
+      
         <style type="text/css">
 
 
@@ -519,26 +521,6 @@ svg.selectAll('.region-label').each(insertLinebreaks2);
             });
 			
 
-  
-			//this is the OnClick function.  Replace console text with action code.
-			function click_sub(d){
-       
-      tooltip.html( getHTML("South Central"))
-        .style('left',d3.event.x + 'px')
-        .style('top', d3.event.y + 'px');
-        
-          tooltip.append('img').attr('id','closebtn').style('position','absolute').style('top','5px').style('right','5px').attr('src','img/closebtn.png').attr('onclick','close_popup();');
-			}		
-
-          function getHTML(fieldreg){
-              var elem=document.getElementById('toolt');
-              elem.style.display='block';
-            
-            if(fieldreg=="South Central"){return "<p class='lrg'><span class='regname'>SOUTH CENTRAL</span><br />Christy Culp</p><address>610 State Ave., Suite 203<br />P.O. Box 1660<br />Alamosa, CO 81101</address><p>Office: <i>719-589-2251</i><br />Fax: <i>719-589-6299</i><br />Cell: <i>719-580-1313</i></p><a href= 'mailto:christy.culp@state.co.us'>christy.culp@state.co.us</a>"}
-            
-         
-          }
-  
 function changeview(elemid){
   d3.selectAll(".county").style("visibility","hidden");
   d3.selectAll(".region-label").style("visibility","hidden");
@@ -555,6 +537,45 @@ function changeview(elemid){
   
 }
           
+          
+          
+          
+          
+  
+			//this is the OnClick function. 
+			function click_sub(d){
+        var ar, i, j;
+        var countyname="";
+        
+        //shorten 5 digit to 3 digit: 08031 to 031
+        var id=d.properties.GEOID;
+        var fips=id.substr(id.length-3);
+
+        //loop through broadband json file.  find records with ids that match fips
+        for(i=0;i<broadband.length;i=i+1){
+          ar = broadband[i].ids;
+          for(j=0;j<ar.length;j=j+1){
+            if(fips===ar[j]){console.log('hit '+broadband[i].applicanttitle);}
+          }
+        }
+        
+        
+      tooltip.html( getHTML("South Central"))
+        .style('left',d3.event.x + 'px')
+        .style('top', d3.event.y + 'px');
+        
+          tooltip.append('img').attr('id','closebtn').style('position','absolute').style('top','5px').style('right','5px').attr('src','img/closebtn.png').attr('onclick','close_popup();');
+			}		
+
+          function getHTML(fieldreg){
+              var elem=document.getElementById('toolt');
+              elem.style.display='block';
+            
+            if(fieldreg=="South Central"){return "<p class='lrg'><span class='regname'>SOUTH CENTRAL</span><br />Christy Culp</p><address>610 State Ave., Suite 203<br />P.O. Box 1660<br />Alamosa, CO 81101</address><p>Office: <i>719-589-2251</i><br />Fax: <i>719-589-6299</i><br />Cell: <i>719-580-1313</i></p><a href= 'mailto:christy.culp@state.co.us'>christy.culp@state.co.us</a>"}
+            
+         
+          }
+  
           
         </script>
 
