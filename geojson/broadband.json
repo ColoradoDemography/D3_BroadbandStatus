@@ -15,6 +15,7 @@ var broadband=[
         "regionmanager": "Greg Winkler",
         "lgid": "19026",
         "projecttype": "BROADBAND",
+        "description": " ",
         "monitor": "Winkler, Greg",
         "matchingfunds": 63500
     },
@@ -34,7 +35,7 @@ var broadband=[
         "regionmanager": "Ken Charles",
         "lgid": "42004",
         "projecttype": "BROADBAND",
-        "description": "The Project consists of Phase II of the City of Cortez�s Fiber Expansion. The work includes trenching and placement of 30,000 feet of fiber line, installation of electronics and area cabinets, wiring of the fiber to components in cabinets and main hub, engineering and inspection, and materials.",
+        "description": "The Project consists of Phase II of the City of Cortez's Fiber Expansion. The work includes trenching and placement of 30,000 feet of fiber line, installation of electronics and area cabinets, wiring of the fiber to components in cabinets and main hub, engineering and inspection, and materials.",
         "monitor": "Charles, Ken",
         "matchingfunds": 1000000
     },
@@ -53,6 +54,7 @@ var broadband=[
         "regionmanager": "Clay Brown",
         "lgid": "47012",
         "projecttype": "BROADBAND",
+        "description": " ",
         "monitor": "Winkler, Greg",
         "matchingfunds": 200000
     },
@@ -90,6 +92,7 @@ var broadband=[
         "regionmanager": "Greg Winkler",
         "lgid": "49010",
         "projecttype": "BROADBAND",
+        "description": " ",
         "monitor": "Winkler, Greg",
         "matchingfunds": 150000
     },
@@ -108,7 +111,7 @@ var broadband=[
         "regionmanager": "Elyse Ackerman",
         "lgid": "52016",
         "projecttype": "BROADBAND",
-        "description": "The Project consists of creating a municipal area network �MAN� for each governmental entity (City, County, College, K-12, Special Districts) within the Towns of Meeker and Rangely, as well as install Fiber to the Block (FTTB ) infrastructure to provide the backbone network necessary for eventual broadband service to all governmental entities, education, businesses, and residences through a private public partnership. The broadband �roads� will then exist, offering private industry a sustainable business model to serve the public.",
+        "description": "The Project consists of creating a municipal area network 'MAN' for each governmental entity (City, County, College, K-12, Special Districts) within the Towns of Meeker and Rangely, as well as install Fiber to the Block (FTTB ) infrastructure to provide the backbone network necessary for eventual broadband service to all governmental entities, education, businesses, and residences through a private public partnership. The broadband 'roads' will then exist, offering private industry a sustainable business model to serve the public.",
         "monitor": "Ackerman, Elyse",
         "matchingfunds": 3366028
     },
@@ -147,7 +150,7 @@ var broadband=[
         "regionmanager": "Clay Brown",
         "lgid": "60010",
         "projecttype": "BROADBAND",
-        "description": "The project is to develop a countywide plan for broadband. The County will engage a qualified consulting firm to conduct an assessment of needs (infrastructure/services); compile basic available data from existing providers; identify public and private projects already underway or planned; identify gaps in the network and strategies to fill gaps, including cost estimates; address sustainability and maintenance of the network; and provide an assessment of carriers� concerns, current status, and possible future deployment and projects. These steps will ensure the County builds on statewide efforts already underway in a coordinated approach.",
+        "description": "The project is to develop a countywide plan for broadband. The County will engage a qualified consulting firm to conduct an assessment of needs (infrastructure/services); compile basic available data from existing providers; identify public and private projects already underway or planned; identify gaps in the network and strategies to fill gaps, including cost estimates; address sustainability and maintenance of the network; and provide an assessment of carriers' concerns, current status, and possible future deployment and projects. These steps will ensure the County builds on statewide efforts already underway in a coordinated approach.",
         "monitor": "Winkler, Greg",
         "matchingfunds": 18750
     },
@@ -298,14 +301,14 @@ var broadband=[
         "amtmineral": "$ -",
         "regionmanager": "Statewide",
         "projecttype": "BROADBAND",
-        "description": "The Project consists of the development of a Regional Strategic Plan for Region 12 and the counties of Moffat, Rio Blanco and Routt for broadband capability improvement by using in-house staff and an independent consultant to build on EagleNet�s �middle mile� network and by focusing the work of Region 12 on the �last mile� including:\n  1) an assessment of needs, both infrastructure and services, through surveys, public meetings, and asset mapping;\n  2) educational workshops to ensure that the participants have the information needed on regulations, economics, and technology to develop a realistic plan;\n  3) identification of public and private projects already underway to address these needs;\n  4) identification of gaps in the network and a strategy to fill these gaps; and\n  5) address sustainability and maintenance of the network into the future.",
+        "description": "The Project consists of the development of a Regional Strategic Plan for Region 12 and the counties of Moffat, Rio Blanco and Routt for broadband capability improvement by using in-house staff and an independent consultant to build on EagleNet's 'middle mile' network and by focusing the work of Region 12 on the 'last mile' including:\n  1) an assessment of needs, both infrastructure and services, through surveys, public meetings, and asset mapping;\n  2) educational workshops to ensure that the participants have the information needed on regulations, economics, and technology to develop a realistic plan;\n  3) identification of public and private projects already underway to address these needs;\n  4) identification of gaps in the network and a strategy to fill these gaps; and\n  5) address sustainability and maintenance of the network into the future.",
         "monitor": "Winkler, Greg",
         "matchingfunds": 50000
     },
   
   
      {
-        "ids": ["67280"],
+        "ids": [], //["67280"],
         "programtype": "EIAF",
         "projectnmbr": 7060,
         "projname": "Salida Broadband Tower",
@@ -325,7 +328,7 @@ var broadband=[
         "matchingfunds": 57500
     },
      {
-        "ids": ["083","033","067","111","007"],       
+        "ids": [], //["083","033","067","111","007"],       
         "programtype": "EIAF",
         "projectnmbr": 7030,
         "projname": "Region 09 Community Development '13",
@@ -339,12 +342,12 @@ var broadband=[
         "amtmineral": "$ -",
         "regionmanager": "Statewide",
         "projecttype": "ECONDEV",
-        "description": "The project consists of partially financing community and economic development projects for the Southwest Colorado Council of Governments (SWCCOG) (Contractor). The SWCCOG consists of local governments in state planning Region 9.\n \n The Projects include:\n 1. In collaboration with a qualified consultant(s), produce a Broadband operations and business plan, needed agreements, MOUs or IGAs and recommended policies for the Southwest Colorado Access network (SCAN). \n \n The SWCCOG received a $3.0 million grant to construct a local government, regional broadband infrastructure network (SCAN). This project will help ensure the sustainability and maintenance of the network by developing a business model, plan and agreements to operate and maintain the system that is comprised of the various community systems. SWCCOG�s goal is for the SCAN to be self-sufficient and operate as an enterprise. \n 2. In collaboration with a qualified consultant(s), facilitate a discussion between SWCCOG members and staff that will help determine the best use of SWCCOG efforts and resources.\n In coordination with the regional housing organizations, the regional transit providers in the southwest and the regional senior services providers in the southwest, develop a data base of services, develop and select priorities and produce a web based information system and develop a strategic plan for the SWCCOG and its individual members as it relates to these three service areas referred to as Southwest Connect.",
+        "description": "The project consists of partially financing community and economic development projects for the Southwest Colorado Council of Governments (SWCCOG) (Contractor). The SWCCOG consists of local governments in state planning Region 9.\n \n The Projects include:\n 1. In collaboration with a qualified consultant(s), produce a Broadband operations and business plan, needed agreements, MOUs or IGAs and recommended policies for the Southwest Colorado Access network (SCAN). \n \n The SWCCOG received a $3.0 million grant to construct a local government, regional broadband infrastructure network (SCAN). This project will help ensure the sustainability and maintenance of the network by developing a business model, plan and agreements to operate and maintain the system that is comprised of the various community systems. SWCCOG's goal is for the SCAN to be self-sufficient and operate as an enterprise. \n 2. In collaboration with a qualified consultant(s), facilitate a discussion between SWCCOG members and staff that will help determine the best use of SWCCOG efforts and resources.\n In coordination with the regional housing organizations, the regional transit providers in the southwest and the regional senior services providers in the southwest, develop a data base of services, develop and select priorities and produce a web based information system and develop a strategic plan for the SWCCOG and its individual members as it relates to these three service areas referred to as Southwest Connect.",
         "monitor": "Charles, Ken",
         "matchingfunds": "$ -"
     },
     {
-        "ids": ["065","093","015","043","027"],
+        "ids": [], //["065","093","015","043","027"],
         "programtype": "EIAF",
         "projectnmbr": 7020,
         "projname": "UAACOG Broadband Capacity Plan",

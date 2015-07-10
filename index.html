@@ -1,31 +1,19 @@
 
 <!DOCTYPE html>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <html lang="en">
     <head>
         <meta charset="utf-8">
         <title>D3</title>
   
-<script src="http://d3js.org/d3.v3.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.5/d3.min.js" charset="utf-8"></script>
 <script src="http://d3js.org/d3.geo.projection.v0.min.js" charset="utf-8"></script>
 <script src="geojson/broadband.json"></script>
       
       
         <style type="text/css">
 
-
-          
-  path.county{
-    fill-opacity: 1;   
-    stroke-dasharray: 3, 3;
-    stroke-width: 0.5px;
-    stroke: rgb(150,150,150);
-	}
-          
-  path.county:hover{
-    stroke-dasharray: 0,0;
-		stroke: rgb(0,0,0); 
-		stroke-width: 2px;  
-	}          
+    
           
           
 	.fr{
@@ -61,7 +49,9 @@
   border: 1px solid black;
   background-color: white;
   border-radius: 5px;
+  font-size: 10pt;
 }
+
 
           .lrg{
             font-weight: bold;
@@ -118,6 +108,11 @@
      pointer-events:none;            
           }
           
+          .sel{
+            outline: 1px solid grey;
+            color: black;
+            background-color: #ddd;
+          }
           
         </style>
     </head>
@@ -142,6 +137,13 @@
   position: relative;" width="0" height="0" 
   xmlns="http://www.w3.org/2000/svg" version="1.1" >
 <defs>
+          <pattern id="pattern-stripe" 
+          width="4" height="4" 
+          patternUnits="userSpaceOnUse"
+          patternTransform="rotate(45)">
+          <rect width="2" height="4" transform="translate(0,0)" fill="#ccc"></rect>
+        </pattern>
+  
     <filter id="dropshadow" height="130%">
       <feGaussianBlur in="SourceAlpha" stdDeviation="4"/> 
       <feOffset dx="3" dy="3" result="offsetblur"/> 
@@ -163,11 +165,11 @@
 }         
           
           
-          d3.selection.prototype.moveToFront = function() {
-  return this.each(function(){
-  this.parentNode.appendChild(this);
-  });
-};
+  d3.selection.prototype.moveToFront = function() { 
+    return this.each(function() { 
+      this.parentNode.appendChild(this); 
+    }); 
+  }; 
           
 		//Width and height
             var w = 700;
@@ -373,7 +375,7 @@ switch (county_name) {
             if(ret_color==10){return 'rgb(253,191,111)';}                  
             if(ret_color==11){return 'rgb(251,154,153)';}
             if(ret_color==12){return 'rgb(255,255,153)';}     
-            if(ret_color==13){return 'rgb(200,200,200)';}                 
+            if(ret_color==13){return 'url(#pattern-stripe)';}                 
             
           }
 
@@ -388,13 +390,45 @@ switch (county_name) {
                    .append("path")
                    .attr("d", path)
                 .style("fill", function(d){return get_county_color(d);})
+                .style("fill-opacity", "1")
+                .style("stroke-dasharray", "(3,3)")
+                .style("stroke-width", "0.5px")         
+                .style("stroke", "rgb(150,150,150)")                   
                 .attr("class", function(d) { return d.properties.classes; })
                 .on("mouseover",function(){
+
+                  //jenky workaround for ie losing mouseover events when svg element is moved to front
+                  //ie test
+    var ms_ie = false;
+    var ua = window.navigator.userAgent;
+    var old_ie = ua.indexOf('MSIE ');
+    var new_ie = ua.indexOf('Trident/');
+
+    if ((old_ie > -1) || (new_ie > -1)) {
+        ms_ie = true;
+    }
+
+    if( ms_ie ){
+        //IE specific code goes here
+    }else{
       var sel = d3.select(this);
       sel.moveToFront();
+    }
+
+      d3.select(this).style("stroke-dasharray", "(0,0)");
+      d3.select(this).style("stroke", "rgb(0,0,0)");    
+      d3.select(this).style("stroke-width", "2px");
+                  
+    })
+              .on("mouseout",function(){
+      d3.select(this).style("stroke-dasharray", "(3,3)");
+      d3.select(this).style("stroke", "rgb(150,150,150)");    
+      d3.select(this).style("stroke-width", "0.5px");
     })
     .on('click' , function(d){ click_sub(d); });
 				   
+
+              
 				//add label for each feature   
 				labels.selectAll("text") 
 					.data(json.features) 
@@ -422,16 +456,6 @@ switch (county_name) {
          svg.selectAll('text').each(insertLinebreaks);
               
               d3.json("geojson/broadbandreg.geojson", function(gjson) {
-                
-                //Bind data and create one path per GeoJSON feature
-    //            regions.selectAll("path")
-    //               .data(gjson.features)
-     //              .enter()
-     //              .append("path")
-     //              .attr("d", path)
-   //             .classed("fr", true);
-//				   .on('click' , function(d){ click_sub(d); });
-
                 
          //add label for each feature   
 				reglabels.selectAll("text") 
@@ -489,7 +513,8 @@ svg.selectAll('.region-label').each(insertLinebreaks2);
                .style("fill", "DarkRed")
                .on('mouseover' ,  function(d){d3.select(this).style("fill", "blue");})
                .on('mouseout' ,  function(d){d3.select(this).style("fill", "DarkRed");})           
-					      .attr("class", function(d){return d.properties.classes;});
+					      .attr("class", function(d){return d.properties.classes;})
+               .on('click' , function(d){ click_sub(d); });
                    
                    
           //add label for each feature   
@@ -522,6 +547,20 @@ svg.selectAll('.region-label').each(insertLinebreaks2);
 			
 
 function changeview(elemid){
+  
+  close_popup();
+
+  document.getElementById("overview").className = "titlebar";
+  document.getElementById("planscompleted").className = "titlebar";
+  document.getElementById("planprocessunderway").className = "titlebar";
+  document.getElementById("appinprocess").className = "titlebar";
+  document.getElementById("plandiscussion").className = "titlebar";
+  document.getElementById("contractawarded").className = "titlebar";
+  document.getElementById("appunderreview").className = "titlebar";
+  document.getElementById("votestoexempt").className = "titlebar";
+  
+  document.getElementById(elemid).className = "titlebar sel";
+  
   d3.selectAll(".county").style("visibility","hidden");
   d3.selectAll(".region-label").style("visibility","hidden");
   d3.selectAll(".city").style("visibility","hidden");  
@@ -539,43 +578,74 @@ function changeview(elemid){
           
           
           
-          
+             function numberToCurrency(amount) {
+
+        var thousandsSeparator = ","
+        var currencyNum = "";
+        var amountString = amount.toString();
+        var digits = amountString.split("");
+
+        var countDigits = digits.length;
+        var revDigits = digits.reverse();
+
+        for(var i=0; i<countDigits; i++) {
+            if ((i%3 == 0) && (i !=0)) {
+                currencyNum += thousandsSeparator+revDigits[i];
+            } else {
+                currencyNum += digits[i];
+            }
+        };
+
+        var revCurrency = currencyNum.split("").reverse().join("");
+
+        var finalCurrency = "$"+revCurrency;
+
+        return finalCurrency;
+    }
           
   
 			//this is the OnClick function. 
 			function click_sub(d){
         var ar, i, j;
-        var countyname="";
+        var titlestring="<h4>Recent Awards</h4>";
+        var popupstring="";
+        var subt;  //subtract digits (5) for place or (3) for county
         
         //shorten 5 digit to 3 digit: 08031 to 031
+        
+            
         var id=d.properties.GEOID;
-        var fips=id.substr(id.length-3);
+        
+        if(id.length==5){subt=3;}else{subt=5;}
+        
+        var fips=id.substr(id.length-subt);
 
         //loop through broadband json file.  find records with ids that match fips
         for(i=0;i<broadband.length;i=i+1){
           ar = broadband[i].ids;
           for(j=0;j<ar.length;j=j+1){
-            if(fips===ar[j]){console.log('hit '+broadband[i].applicanttitle);}
+            if(fips===ar[j]){
+              popupstring=popupstring+"<span title='"+broadband[i].description+"'>"+broadband[i].projname + "<br />"+broadband[i].applicanttitle+"<br />Date: "+broadband[i].dateofaward+"&nbsp;&nbsp;&nbsp;Award: "+numberToCurrency(broadband[i].totalawarded)+"</span><br /><br />";
+            }
           }
         }
         
+       
+              var elem=document.getElementById('toolt');
+              elem.style.display='block';
         
-      tooltip.html( getHTML("South Central"))
-        .style('left',d3.event.x + 'px')
-        .style('top', d3.event.y + 'px');
+        if(popupstring==""){popupstring="<p>None</p>";}
+        
+      tooltip.html(titlestring+popupstring)
+        .style('left', d3.event.pageX + 'px')
+        .style('top', d3.event.pageY + 'px');
+        
+        
         
           tooltip.append('img').attr('id','closebtn').style('position','absolute').style('top','5px').style('right','5px').attr('src','img/closebtn.png').attr('onclick','close_popup();');
 			}		
 
-          function getHTML(fieldreg){
-              var elem=document.getElementById('toolt');
-              elem.style.display='block';
-            
-            if(fieldreg=="South Central"){return "<p class='lrg'><span class='regname'>SOUTH CENTRAL</span><br />Christy Culp</p><address>610 State Ave., Suite 203<br />P.O. Box 1660<br />Alamosa, CO 81101</address><p>Office: <i>719-589-2251</i><br />Fax: <i>719-589-6299</i><br />Cell: <i>719-580-1313</i></p><a href= 'mailto:christy.culp@state.co.us'>christy.culp@state.co.us</a>"}
-            
-         
-          }
-  
+
           
         </script>
 
