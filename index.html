@@ -22,6 +22,10 @@
     pointer-events:none; 
     fill-opacity: 0;   
 	}
+          
+          .red{
+            color: maroon;
+          }
 
 
 	text.county {
@@ -625,7 +629,7 @@ function changeview(elemid){
           ar = broadband[i].ids;
           for(j=0;j<ar.length;j=j+1){
             if(fips===ar[j]){
-              popupstring=popupstring+"<span title='"+broadband[i].description+"'>"+broadband[i].projname + "<br />"+broadband[i].applicanttitle+"<br />Date: "+broadband[i].dateofaward+"&nbsp;&nbsp;&nbsp;Award: "+numberToCurrency(broadband[i].totalawarded)+"</span><br /><br />";
+              popupstring=popupstring+"<span title='"+broadband[i].description+"'><b><span class='red'>"+broadband[i].projname + "</span></b><br />"+broadband[i].applicanttitle+"<br/><b>Date:</b> "+broadband[i].dateofaward+"<br /><b>Award:</b> "+numberToCurrency(broadband[i].totalawarded)+"&nbsp;&nbsp;&nbsp;<b>Match:</b> "+numberToCurrency(broadband[i].matchingfunds)+"</span><br /><br />";
             }
           }
         }
