@@ -118,6 +118,11 @@
             background-color: #ddd;
           }
           
+          
+          html, body{
+            height: 600px;
+            width: 900px;
+          }
         </style>
     </head>
     <body>
@@ -640,11 +645,26 @@ function changeview(elemid){
         
         if(popupstring==""){popupstring="<p>None</p>";}
         
+        
+
+        
       tooltip.html(titlestring+popupstring)
-        .style('left', d3.event.pageX + 'px')
         .style('top', d3.event.pageY + 'px');
+     
+                console.log(tooltip[0][0].clientWidth);
         
+        var tooltipwidth=tooltip[0][0].clientWidth;
+        var offset=0; //to prevent from tooltip extending off viewable area (drupal iframe page width of 900px)
         
+        if((d3.event.pageX+tooltipwidth)>900){
+          console.log(d3.event.pageX);
+          console.log(tooltipwidth);
+         
+          offset=895-(d3.event.pageX+tooltipwidth);
+          console.log(offset);
+        }
+        
+                tooltip.style('left', d3.event.pageX+offset + 'px')
         
           tooltip.append('img').attr('id','closebtn').style('position','absolute').style('top','5px').style('right','5px').attr('src','img/closebtn.png').attr('onclick','close_popup();');
 			}		
