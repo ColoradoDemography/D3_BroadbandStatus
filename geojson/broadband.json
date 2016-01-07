@@ -2,6 +2,7 @@ var broadband=[
   
       {
         "ids": ["63265"],
+        "atype": "-Singular Award-",
         "programtype": "EIAF",
         "projectnmbr": 7829,
         "projname": "Red Cliff Communication Towers",
@@ -21,6 +22,7 @@ var broadband=[
     },
   {
             "ids": ["17375"],
+        "atype": "-Singular Award-",    
         "programtype": "EIAF",
         "projectnmbr": 7509,
         "projname": "Cortez Fiber Expansion Phase II",
@@ -41,6 +43,7 @@ var broadband=[
     },
    {
              "ids": ["093"],
+        "atype": "-Singular Award-",     
         "programtype": "EIAF",
         "projectnmbr": 7825,
         "projname": "Park County Broadband Initiative Fairplay to Alma",
@@ -48,18 +51,19 @@ var broadband=[
         "county": "Park",
         "dateofaward": "2015-06-08",
         "yearofaward": 2015,
-        "totalawarded": 200000,
-        "amtseverance": 200000,
+        "totalawarded": 157500,
+        "amtseverance": 157500,
         "amtmineral": 0,
         "regionmanager": "Clay Brown",
         "lgid": "47012",
         "projecttype": "BROADBAND",
         "description": " ",
         "monitor": "Winkler, Greg",
-        "matchingfunds": 200000
+        "matchingfunds": 157500
     },
      {
              "ids": ["093"],
+        "atype": "-Singular Award-",       
         "programtype": "EIAF",
         "projectnmbr": 7753,
         "projname": "Park County Broadband",
@@ -67,18 +71,19 @@ var broadband=[
         "county": "Park",
         "dateofaward": "2015-03-26",
         "yearofaward": 2015,
-        "totalawarded": 375000,
-        "amtseverance": 375000,
+        "totalawarded": 369614,
+        "amtseverance": 369614,
         "amtmineral": 0,
         "regionmanager": "Clay Brown",
         "lgid": "47012",
         "projecttype": "BROADBAND",
         "description": "The Project consists of a design-build the design, engineering and construction of a 1 Gbps / 10.755 mile fiber optic network to serve 8 governmental locations including fire departments, library, elementary and high school facilities and the Park County Sheriff, Search and Rescue and Public Health in and around the Town of Bailey in Park County.",
         "monitor": "Winkler, Greg",
-        "matchingfunds": 375000
+        "matchingfunds": 369613
     },
      {
         "ids": ["097"],
+        "atype": "-Singular Award-",       
         "programtype": "EIAF",
         "projectnmbr": 7828,
         "projname": "Pitkin County Broadband & Microwave Design/Build Plan",
@@ -98,6 +103,7 @@ var broadband=[
     },
     {
         "ids": ["103"],
+        "atype": "-Singular Award-",      
         "programtype": "EIAF",
         "projectnmbr": 7744,
         "projname": "Rio Blanco County Broadband Infrastructure",
@@ -117,6 +123,7 @@ var broadband=[
     },
      {
         "ids": ["107"],
+        "atype": "-Singular Award-",       
         "programtype": "EIAF",
         "projectnmbr": 7799,
         "projname": "Routt County Broadband Action Plan",
@@ -125,18 +132,19 @@ var broadband=[
         "executiondate": "2015-04-22",
         "dateofaward": "2015-04-06",
         "yearofaward": 2015,
-        "totalawarded": 10000,
-        "amtseverance": 10000,
+        "totalawarded": 24500,
+        "amtseverance": 24500,
         "amtmineral": 0,
         "regionmanager": "Elyse Ackerman",
         "lgid": "54012",
         "projecttype": "BROADBAND",
         "description": "Prepare an action plan for improving and expanding broadband service to meet or exceed the FCC service definition of 25 mbps down and 3 mbps up within Routt County and in coordination with NWCCOG and other regional planning. Routt County is underserved by broadband to meet governmental, healthcare, education, business and residential needs today and into the future.",
         "monitor": "Winkler, Greg",
-        "matchingfunds": 10000
+        "matchingfunds": 24500
     },
      {
         "ids": ["119"],
+        "atype": "-Singular Award-",       
         "programtype": "EIAF",
         "projectnmbr": 7826,
         "projname": "Teller County Broadband Plan",
@@ -156,6 +164,7 @@ var broadband=[
     },
     {
         "ids": ["125"],
+        "atype": "-Singular Award-",      
         "programtype": "EIAF",
         "projectnmbr": 8001,
         "projname": "Yuma County Broadband Master Plan",
@@ -163,18 +172,19 @@ var broadband=[
         "county": "Yuma",
         "dateofaward": "2015-06-03",
         "yearofaward": 2015,
-        "totalawarded": 25000,
-        "amtseverance": 25000,
+        "totalawarded": 29400,
+        "amtseverance": 29400,
         "amtmineral": 0,
         "regionmanager": "Greg Etl",
         "lgid": "63012",
         "projecttype": "BROADBAND",
         "description": "County wide broadband master plan.",
         "monitor": "Etl, Greg",
-        "matchingfunds": 33800
+        "matchingfunds": 29400
     },
      {
         "ids": ["109","105","079","021","023","003"],
+        "atype": "-Participant-",       
         "programtype": "EIAF",
         "projectnmbr": 8008,
         "projname": "SLVCOG Regional Broadband Plan",
@@ -192,7 +202,8 @@ var broadband=[
         "matchingfunds": 17125
     },
      {
-        "ids": ["039","073","063","017","041"],       
+        "ids": ["039","073","063","017","041"],      
+        "atype": "-Participant-",              
         "programtype": "EIAF",
         "projectnmbr": 7644,
         "projname": "ECCOG Broadband Strategic Plan",
@@ -212,6 +223,7 @@ var broadband=[
     },
     {
         "ids": ["075","087","121","125","095","115","123"],
+        "atype": "-Participant-",             
         "programtype": "EIAF",
         "projectnmbr": 7565,
         "projname": "NECALG Broadband Initiative FY 2015",
@@ -220,17 +232,18 @@ var broadband=[
         "executiondate": "2014-11-10",
         "dateofaward": "2014-08-04",
         "yearofaward": 2014,
-        "totalawarded": 57965,
-        "amtseverance": 57965,
+        "totalawarded": 58797,
+        "amtseverance": 58797,
         "amtmineral": 0,
         "regionmanager": "Clay Brown",
         "projecttype": "BROADBAND",
         "description": "Broadband planning.",
         "monitor": "Etl, Greg",
-        "matchingfunds": 19322
+        "matchingfunds": 19596
     },
     {
         "ids": ["029","051","085","091","053","113"],
+        "atype": "-Participant-",             
         "programtype": "EIAF",
         "projectnmbr": 7446,
         "projname": "Region 10 Broadband Initiative 2014",
@@ -250,6 +263,7 @@ var broadband=[
     },
     {
         "ids": ["065","093","015","043","027"],
+        "atype": "-Participant-",             
         "programtype": "EIAF",
         "projectnmbr": 7447,
         "projname": "UAACOG Broadband Initiative 2014",
@@ -269,6 +283,7 @@ var broadband=[
     },
      {
         "ids": ["081","103","107","057","049","037","117","097"],
+        "atype": "-Participant-",              
         "programtype": "EIAF",
         "projectnmbr": 7338,
         "projname": "Region 12 Community Development '14",
@@ -288,6 +303,7 @@ var broadband=[
     },
     {
         "ids": ["081","103","107","057","049","037","117","097"],
+        "atype": "-Participant-",             
         "programtype": "EIAF",
         "projectnmbr": 7023,
         "projname": "Region 12 Community Development '13",
@@ -303,13 +319,14 @@ var broadband=[
         "projecttype": "BROADBAND",
         "description": "The Project consists of the development of a Regional Strategic Plan for Region 12 and the counties of Moffat, Rio Blanco and Routt for broadband capability improvement by using in-house staff and an independent consultant to build on EagleNet's 'middle mile' network and by focusing the work of Region 12 on the 'last mile' including:\n  1) an assessment of needs, both infrastructure and services, through surveys, public meetings, and asset mapping;\n  2) educational workshops to ensure that the participants have the information needed on regulations, economics, and technology to develop a realistic plan;\n  3) identification of public and private projects already underway to address these needs;\n  4) identification of gaps in the network and a strategy to fill these gaps; and\n  5) address sustainability and maintenance of the network into the future.",
         "monitor": "Winkler, Greg",
-        "matchingfunds": 50000
+        "matchingfunds": 65000
     },
   
   
   
   {
     "ids": ["101","071","055"],
+    "atype": "-Participant-",           
     "county":"Las Animas",
     "regionmanager":"Lee Merkel",
     "projectnmbr":9018,
@@ -328,7 +345,8 @@ var broadband=[
   },
   
   {
-    "ids": ["113","085"],
+    "ids": ["113"],
+    "atype": "-Singular Award-",        
     "county":"San Miguel",
     "regionmanager":"Elyse Ackerman",
     "projectnmbr":7853,
@@ -348,6 +366,7 @@ var broadband=[
   
   {
     "ids": ["051","053","091","113","085","029"],
+    "atype": "-Participant-",           
     "county":"Montrose",
     "regionmanager":"Elyse Ackerman",
     "projectnmbr":7854,
@@ -367,6 +386,7 @@ var broadband=[
   
   {
     "ids": ["103"],
+    "atype": "-Singular Award-",    
     "county":"Rio Blanco",
     "regionmanager":"Elyse Ackerman",
     "projectnmbr":7862,
@@ -378,20 +398,21 @@ var broadband=[
     "dateofaward":"05-AUG-15",
     "yearofaward":2016,
     "executiondate":"10-OCT-15",
-    "totalawarded":1669458,
-    "amtseverance":1669458,
+    "totalawarded":1669459,
+    "amtseverance":1669459,
     "amtmineral":0,
     "matchingfunds":1669459
   },
   
   {
     "ids": ["081","103","107","057","049","117","037","097"],
+    "atype": "-Participant-",           
     "county":"Summit",
     "regionmanager":"Greg Winkler",
     "projectnmbr":7827,
     "programtype":"EIAF",
     "projecttype":"BROADBAND",
-    "projname":"NWCCOG Regional Broadband Coordinator",
+    "projname":"Region 12 Broadband Coordinator",
     "description":"The Project consists of the continued employment of the Region X11 Broadband Coordinator through June 2017. It also contains funds to provide consulting services for the State of Colorado thru the end of year. The Broadband Coordinator is responsible for the development and coordination of broadband projects within Northwest Colorado and has been working with the eight participating counties to move forward specific projects that are in alignment with the Regional Broadband Strategic Plan. NWCCOG has offered Statewide Broadband services by allowing their Broadband Coordinator to work with all regional managers and their applicants on every stage of applications from project development, application review, award and project monitoring including scope, contractual content and close out.",
     "applicanttitle":"Northwest Colorado Council of Governments",
     "dateofaward":"05-AUG-15",
@@ -405,6 +426,7 @@ var broadband=[
   
   {
     "ids": ["045","077"],
+    "atype": "-Participant-",           
     "county":"Garfield",
     "regionmanager":"Elyse Ackerman",
     "projectnmbr":8020,
@@ -424,6 +446,7 @@ var broadband=[
   
   {
     "ids": ["033","083","111","067","007"],
+    "atype": "-Participant-",           
     "county":"La Plata",
     "regionmanager":"Ken Charles",
     "projectnmbr":8010,
@@ -439,6 +462,107 @@ var broadband=[
     "amtseverance":75000,
     "amtmineral":0,
     "matchingfunds":32000
+  },
+  
+  {
+    "ids": ["107"],
+    "atype": "-Singular Award-",           
+    "county":"Routt",
+    "regionmanager":"Greg Winkler",
+    "projectnmbr":8079,
+    "programtype":"EIAF",
+    "projecttype":"BROADBAND",
+    "projname":"Routt County Broadband Fiber Optic Build",
+    "description":"The Project consists of construction of 288-strand fiber optic trunk (48,499 linear feet/ 9.19miles) between east and west Steamboat, connecting to existing carrier neutral location operated by community consortium, and including splice-points and lateral connections (15,110 linear feet/2.86 miles) to Routt County Public Safety Complex; Yampa Valley Electric Association (YVEA)headquarters and substations; Steamboat Springs fire station; School District buildings; Medical Center facilities and Colorado Mountain College.",
+    "applicanttitle":"Routt County",
+    "dateofaward":"08-DEC-15",
+    "yearofaward":2016,
+    "executiondate":"",
+    "totalawarded":748194,
+    "amtseverance":748194,
+    "amtmineral":0,
+    "matchingfunds":748196
+  },
+  
+  {
+    "ids": ["041"],
+    "atype": "-Singular Award-",           
+    "county":"El Paso",
+    "regionmanager":"Greg Winkler",
+    "projectnmbr":8110,
+    "programtype":"EIAF",
+    "projecttype":"BROADBAND",
+    "projname":"El Paso County Broadband Strategic Plan",
+    "description":"The project will expand the Teller County Broadband Strategic Plan to include and incorporate western El Paso County from outside Manitou Springs to Crystola at the border between El Paso and Teller County.  This is commonly referred to the Ute Pass Area.  The work to be done by the same consultant as currently engaged by Teller County examining and reporting in the same fashion as outline in the scope of project for the Teller County Broadband Strategic Plan.",
+    "applicanttitle":"El Paso County",
+    "dateofaward":"09-DEC-15",
+    "yearofaward":2016,
+    "executiondate":"",
+    "totalawarded":22050,
+    "amtseverance":22050,
+    "amtmineral":0,
+    "matchingfunds":7350
+  },
+  
+  {
+    "ids": ["119"],
+    "atype": "-Participant-",           
+    "county":"El Paso",
+    "regionmanager":"Greg Winkler",
+    "projectnmbr":8110,
+    "programtype":"EIAF",
+    "projecttype":"BROADBAND",
+    "projname":"El Paso County Broadband Strategic Plan",
+    "description":"The project will expand the Teller County Broadband Strategic Plan to include and incorporate western El Paso County from outside Manitou Springs to Crystola at the border between El Paso and Teller County.  This is commonly referred to the Ute Pass Area.  The work to be done by the same consultant as currently engaged by Teller County examining and reporting in the same fashion as outline in the scope of project for the Teller County Broadband Strategic Plan.",
+    "applicanttitle":"El Paso County",
+    "dateofaward":"09-DEC-15",
+    "yearofaward":2016,
+    "executiondate":"",
+    "totalawarded":22050,
+    "amtseverance":22050,
+    "amtmineral":0,
+    "matchingfunds":7350
+  },
+  
+  {
+    "ids": ["081"],
+    "atype": "-Singular Award-",           
+    "county":"Moffat",
+    "regionmanager":"Elyse Ackerman",
+    "projectnmbr":9131,
+    "programtype":"EIAF",
+    "projecttype":"BROADBAND",
+    "projname":"Craig - Moffat County Broadband Study",
+    "description":"The Project consists of consulting services to complete a\nbroadband study for Moffat County. The study will include an \ninventory of public and private municipal broadband \ninfrastructure, inventory/survey current demand, identify \nunserved and underserved portions of the county, survey local \nservice providers, identify major broadband consumers and \nassess needs, identify partnerships, identify opportunities to \naggregate demand, identify needed infrastructure/rights of ways, \nidentify middle and last mile provider partners, and identify gaps \nand develop cost estimates and funding sources to address.",
+    "applicanttitle":"Craig, City of",
+    "dateofaward":"09-DEC-15",
+    "yearofaward":2016,
+    "executiondate":"",
+    "totalawarded":25000,
+    "amtseverance":25000,
+    "amtmineral":0,
+    "matchingfunds":25000
+  },
+  
+  {
+    "ids": ["117"],
+    "atype": "-Singular Award-",           
+    "county":"Summit",
+    "regionmanager":"Greg Winkler",
+    "projectnmbr":8109,
+    "programtype":"EIAF",
+    "projecttype":"BROADBAND",
+    "projname":"Summit County Broadband Development Consultant",
+    "description":"Summit County wishes to engage a telecommunications engineering consultant to evaluate county owned telecommunications infrastructure for improved cellular and broadband internet access and coverage.  This sub-strategic plan is consistent with Northwest Colorado Council of Governments plan for improvement in the Summit County area.",
+    "applicanttitle":"Summit County",
+    "dateofaward":"09-DEC-15",
+    "yearofaward":2016,
+    "executiondate":"",
+    "totalawarded":25000,
+    "amtseverance":25000,
+    "amtmineral":0,
+    "matchingfunds":50000
   }
+  
   
 ];

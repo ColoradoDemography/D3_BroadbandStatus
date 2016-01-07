@@ -616,7 +616,6 @@ function changeview(elemid){
 			//this is the OnClick function. 
 			function click_sub(d){
         var ar, i, j;
-        var titlestring="<h4>Recent Awards</h4>";
         var popupstring="";
         var subt;  //subtract digits (5) for place or (3) for county
         
@@ -634,7 +633,7 @@ function changeview(elemid){
           ar = broadband[i].ids;
           for(j=0;j<ar.length;j=j+1){
             if(fips===ar[j]){
-              popupstring=popupstring+"<span title='"+broadband[i].description+"'><b><span class='red'>"+broadband[i].projname + "</span></b><br />"+broadband[i].applicanttitle+"<br/><b>Date:</b> "+broadband[i].dateofaward+"<br /><b>Award:</b> "+numberToCurrency(broadband[i].totalawarded)+"&nbsp;&nbsp;&nbsp;<b>Match:</b> "+numberToCurrency(broadband[i].matchingfunds)+"</span><br /><br />";
+              popupstring=popupstring+"<span title='"+broadband[i].description+"'><b><span>"+broadband[i].atype + "</span><br /><span class='red'>"+broadband[i].projname + "</span></b><br />"+broadband[i].applicanttitle+"<br/><b>Date:</b> "+broadband[i].dateofaward+"&nbsp;&nbsp;&nbsp;<b>#</b> "+broadband[i].projectnmbr+"<br /><b>Award:</b> "+numberToCurrency(broadband[i].totalawarded)+"&nbsp;&nbsp;&nbsp;<b>Match:</b> "+numberToCurrency(broadband[i].matchingfunds)+"</span><br /><br />";
             }
           }
         }
@@ -648,7 +647,7 @@ function changeview(elemid){
         
 
         
-      tooltip.html(titlestring+popupstring)
+      tooltip.html("<br />" + popupstring)
         .style('top', d3.event.pageY + 'px');
      
                 console.log(tooltip[0][0].clientWidth);
