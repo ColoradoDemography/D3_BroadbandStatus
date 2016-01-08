@@ -14,7 +14,7 @@
 { "type": "Feature", "properties": { "GEOID": "0812815", "NAME": "Centennial", "NAMELSAD": "Centennial city", "y": "39.5905678", "x": "-104.49", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -104.86795554400338, 39.592719744009145 ] } },
 
 
-{ "type": "Feature", "properties": { "GEOID": "0827810", "NAME": "Fort|Morgan", "NAMELSAD": "Fort Morgan city", "y": "40.49", "x": "-103.7913190", "classes": "city map2b " }, "geometry": { "type": "Point", "coordinates": [ -103.7913190, 40.2560287 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0827810", "NAME": "Fort|Morgan", "NAMELSAD": "Fort Morgan city", "y": "40.49", "x": "-103.7913190", "classes": "city map1c " }, "geometry": { "type": "Point", "coordinates": [ -103.7913190, 40.2560287 ] } },
 
 { "type": "Feature", "properties": { "GEOID": "0801530", "NAME": "Alma", "NAMELSAD": "Alma town", "y": "39.38", "x": "-105.88", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -106.0663188, 39.2859424 ] } },
 { "type": "Feature", "properties": { "GEOID": "0805265", "NAME": "Bayfield", "NAMELSAD": "Bayfield town", "y": "37.30", "x": "-107.30", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.5948140, 37.2352480 ] } },
@@ -25,7 +25,7 @@
 { "type": "Feature", "properties": { "GEOID": "0818310", "NAME": "Crested|Butte", "NAMELSAD": "Crested Butte town", "y": "38.80", "x": "-106.9772664", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -106.9772664, 38.8677359 ] } },
 { "type": "Feature", "properties": { "GEOID": "0819850", "NAME": "Delta", "NAMELSAD": "Delta city", "y": "38.7573724", "x": "-108.30", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -108.0879591, 38.7573724 ] } },
 { "type": "Feature", "properties": { "GEOID": "0822035", "NAME": "Durango", "NAMELSAD": "Durango city", "y": "37.41", "x": "-107.8716923", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.8716923, 37.2732673 ] } },
-{ "type": "Feature", "properties": { "GEOID": "0825115", "NAME": "Estes Park", "NAMELSAD": "Estes Park town", "y": "40.3", "x": "-105.5255142", "classes": "city map2b map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.5255142, 40.3771167 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0825115", "NAME": "Estes Park", "NAMELSAD": "Estes Park town", "y": "40.3", "x": "-105.5255142", "classes": "city map1c map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.5255142, 40.3771167 ] } },
 { "type": "Feature", "properties": { "GEOID": "0825610", "NAME": "Fairplay", "NAMELSAD": "Fairplay town", "y": "39.2237796", "x": "-105.70", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.9940054, 39.2237796 ] } },
 { "type": "Feature", "properties": { "GEOID": "0827425", "NAME": "Ft. Collins", "NAMELSAD": "Fort Collins city", "y": "40.66", "x": "-105.0648327", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.0648327, 40.5482164 ] } },
 { "type": "Feature", "properties": { "GEOID": "0828305", "NAME": "Fraser", "NAMELSAD": "Fraser town", "y": "39.99", "x": "-106.05", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.8052860, 39.9233235 ] } },

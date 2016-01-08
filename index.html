@@ -94,7 +94,7 @@
           #svgcontainer{
             position: absolute;
             top: 10px;
-            left: 200px;
+            left: 260px;
           }
           
      .stateoutline{
@@ -131,10 +131,10 @@
         <span id="overview" class="titlebar" data-id="1" onclick="changeview(this.id);">Overview</span>
         <span id="planscompleted" class="titlebar" data-id="1a" onclick="changeview(this.id);">Plans Completed</span>
         <span id="planprocessunderway" class="titlebar" data-id="1b" onclick="changeview(this.id);">Planning Process Underway</span>
-        <span id="appinprocess" class="titlebar" data-id="1c" onclick="changeview(this.id);">Application in Process</span>
+        <span id="appinprocess" class="titlebar" data-id="1c" onclick="changeview(this.id);">Planning Application in Process</span>
         <span id="plandiscussion" class="titlebar" data-id="1d" onclick="changeview(this.id);">Plans in Discussion</span>
-        <span id="contractawarded" class="titlebar" data-id="2a" onclick="changeview(this.id);">Contract Awarded</span>
-        <span id="appunderreview" class="titlebar" data-id="2b" onclick="changeview(this.id);">Application Under Review</span>
+        <span id="contractawarded" class="titlebar" data-id="2a" onclick="changeview(this.id);">Infrastructure Contract Awarded</span>
+        <span id="appunderreview" class="titlebar" data-id="2b" onclick="changeview(this.id);">Infrastructure Application Under Review</span>
         <span id="votestoexempt" class="titlebar" data-id="3" onclick="changeview(this.id);">Votes to Exempt</span>
       </div>
         
@@ -650,17 +650,17 @@ function changeview(elemid){
       tooltip.html("<br />" + popupstring)
         .style('top', d3.event.pageY + 'px');
      
-                console.log(tooltip[0][0].clientWidth);
+                //console.log(tooltip[0][0].clientWidth);
         
         var tooltipwidth=tooltip[0][0].clientWidth;
         var offset=0; //to prevent from tooltip extending off viewable area (drupal iframe page width of 900px)
         
         if((d3.event.pageX+tooltipwidth)>900){
-          console.log(d3.event.pageX);
-          console.log(tooltipwidth);
+          //console.log(d3.event.pageX);
+          //console.log(tooltipwidth);
          
           offset=895-(d3.event.pageX+tooltipwidth);
-          console.log(offset);
+          //console.log(offset);
         }
         
                 tooltip.style('left', d3.event.pageX+offset + 'px')
