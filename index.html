@@ -68,7 +68,7 @@
           #linkbar{
             position: absolute;
             left: 0px;
-            top: 40px;
+            top: 90px;
           }
           
           .titlebar{
@@ -93,7 +93,7 @@
           
           #svgcontainer{
             position: absolute;
-            top: 10px;
+            top: 60px;
             left: 250px;
           }
           
@@ -122,6 +122,17 @@
           html, body{
             height: 600px;
             width: 900px;
+          }
+          
+          #titlehead{
+            top: 35px;
+            text-align: center;
+            left: 250px;
+            width: 700px;
+            position: absolute;
+            font-weight: bold;
+            font-size: 24px;
+            font-family: Verdana, Cambria, Georgia;
           }
         </style>
     </head>
@@ -163,6 +174,8 @@
     </filter>
   </defs>
 </svg>
+      
+      <div id="titlehead">DOLA Regional Broadband Partnerships</div>
 		
         <script type="text/javascript">
           
@@ -574,14 +587,38 @@ function changeview(elemid){
   d3.selectAll(".region-label").style("visibility","hidden");
   d3.selectAll(".city").style("visibility","hidden");  
   
-        if(elemid=="overview"){d3.selectAll(".map1").style("visibility","visible");}
-        if(elemid=="planscompleted"){d3.selectAll(".map1a").style("visibility","visible");}
-        if(elemid=="planprocessunderway"){d3.selectAll(".map1b").style("visibility","visible");}
-        if(elemid=="appinprocess"){d3.selectAll(".map1c").style("visibility","visible");}
-        if(elemid=="plandiscussion"){d3.selectAll(".map1d").style("visibility","visible");}
-        if(elemid=="contractawarded"){d3.selectAll(".map2a").style("visibility","visible");}
-        if(elemid=="appunderreview"){d3.selectAll(".map2b").style("visibility","visible");}
-        if(elemid=="votestoexempt"){d3.selectAll(".map3").style("visibility","visible");}
+        if(elemid=="overview"){
+          d3.selectAll(".map1").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "DOLA Regional Broadband Partnerships";
+          }
+        if(elemid=="planscompleted"){
+          d3.selectAll(".map1a").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Plans Completed";
+        }
+        if(elemid=="planprocessunderway"){
+          d3.selectAll(".map1b").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Planning Process Underway";
+        }
+        if(elemid=="appinprocess"){
+          d3.selectAll(".map1c").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Planning Application in Process";
+        }
+        if(elemid=="plandiscussion"){
+          d3.selectAll(".map1d").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Planning Discussion Underway";
+        }
+        if(elemid=="contractawarded"){
+          d3.selectAll(".map2a").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Infrastructure Contract Awarded";
+        }
+        if(elemid=="appunderreview"){
+          d3.selectAll(".map2b").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Infrastructure Application Under Review";
+        }
+        if(elemid=="votestoexempt"){
+          d3.selectAll(".map3").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Votes to Exempt from SB 05-152";
+        }
   
 }
           
