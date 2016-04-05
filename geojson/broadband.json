@@ -602,7 +602,76 @@ var broadband = [
         "amtseverance": 0,
         "amtmineral": 3000000,
         "matchingfunds": 1000000
+    },
+  
+      {
+        "ids": ["051"],
+        "atype": "-Singular Award-",
+        "programtype": "EIAF",
+        "projectnmbr": 8120,
+        "projname": "Gunnison County Public Safety Communications Site Plan",
+        "applicanttitle": "Gunnison County",
+        "county": "Gunnison",
+        "executiondate": "2016-02-10",
+        "dateofaward": "2016-01-20",
+        "yearofaward": 2016,
+        "totalawarded": 25000,
+        "amtseverance": 25000,
+        "amtmineral": 0,
+        "regionmanager": "Elyse Ackerman",
+        "projecttype": "PUBSAFE",
+        "description": "Gunnison County, in collaboration with Pitkin County, Garfield County, Delta County, Holy Cross Energy, US Forest Service, and State of Colorado OIT plan to develop a new enhanced public safety communications site on McClure Pass just off of Highway 133.  Currently the area between Marble and Somerset on Highway 133 has no cell service and virtually no radio coverage.  This project will complete the required environmental assessment work on the proposed tower site.  Once the environmental assessment is completed, the partners will be able to move forward with plans to relocate an existing tower that provides very limited coverage, and due to its use of solar power is susceptible to failure with heavy use and on cloudy days.  The new site will have power, provided by Holy Cross, and will provide the needed coverage in the area.",
+        "monitor": "Winkler, Greg",
+        "matchingfunds": 75000
+    },
+
+
+//change when record in Oracle
+    {
+        "ids": ["25115"],
+        "atype": "-Singular Award-",
+        "programtype": "EIAF",
+        "projectnmbr": 9095, //change when record in Oracle
+        "projname": "Estes Park Broadband Plan",
+        "applicanttitle": "Town of Estes Park",
+        "county": "Larimer",
+        "executiondate": "",
+        "dateofaward": "",
+        "yearofaward": null,
+        "totalawarded": null,
+        "amtseverance": null,
+        "amtmineral": null,
+        "regionmanager": "Don",
+        "projecttype": "BROADBAND",
+        "description": "",
+        "monitor": "Winkler, Greg",
+        "matchingfunds": null
+    },
+
+
+//change when record in Oracle
+    {
+        "ids": ["025", "061", "089", "011", "099", "009"],
+        "atype": "-Participant-",
+        "programtype": "EIAF",
+        "projectnmbr": 9067, //change when record in Oracle
+        "projname": "Region 6 Broadband Plan",
+        "applicanttitle": "Region 6",
+        "county": "Multi",
+        "executiondate": "",
+        "dateofaward": "",
+        "yearofaward": null,
+        "totalawarded": null,
+        "amtseverance": null,
+        "amtmineral": null,
+        "regionmanager": "Lee",
+        "projecttype": "BROADBAND",
+        "description": "",
+        "monitor": "Winkler, Greg",
+        "matchingfunds": null
     }
 
 
 ];
+
+
