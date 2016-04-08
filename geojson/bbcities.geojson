@@ -8,7 +8,7 @@
 { "type": "Feature", "properties": { "GEOID": "0851745", "NAME": "Montrose", "NAMELSAD": "Montrose city", "y": "38.40", "x": "-107.8606816", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.86068650795895, 38.469177056655468 ] } },
 { "type": "Feature", "properties": { "GEOID": "0807850", "NAME": "Boulder", "NAMELSAD": "Boulder city", "y": "40.10", "x": "-105.55", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.25132289334923, 40.027405615177109 ] } },
 { "type": "Feature", "properties": { "GEOID": "0886750", "NAME": "Yuma", "NAMELSAD": "Yuma city", "y": "40.27", "x": "-102.61", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -102.71642552961747, 40.123887038931265 ] } },
-{ "type": "Feature", "properties": { "GEOID": "0831660", "NAME": "Grand|Junction", "NAMELSAD": "Grand Junction city", "y": "38.98", "x": "-108.5674520", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -108.56769808215361, 39.088086628911114 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0831660", "NAME": "Grand|Junction", "NAMELSAD": "Grand Junction city", "y": "39.3", "x": "-108.38", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -108.56769808215361, 39.088086628911114 ] } },
 { "type": "Feature", "properties": { "GEOID": "0863265", "NAME": "Red|Cliff", "NAMELSAD": "Red Cliff town", "y": "39.65", "x": "-106.60", "classes": "city map2a map3 " }, "geometry": { "type": "Point", "coordinates": [ -106.37003003208044, 39.509143517048905 ] } },
 { "type": "Feature", "properties": { "GEOID": "0813845", "NAME": "Cherry|Hills|Village", "NAMELSAD": "Cherry Hills Village city", "y": "39.6374175", "x": "-105.21", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -104.94805575700006, 39.637550675647446 ] } },
 { "type": "Feature", "properties": { "GEOID": "0812815", "NAME": "Centennial", "NAMELSAD": "Centennial city", "y": "39.5905678", "x": "-104.49", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -104.86795554400338, 39.592719744009145 ] } },
@@ -43,6 +43,21 @@
 { "type": "Feature", "properties": { "GEOID": "0877290", "NAME": "Thornton", "NAMELSAD": "Thornton city", "y": "39.85", "x": "-104.63", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -104.9428083, 39.9194198 ] } },
 { "type": "Feature", "properties": { "GEOID": "0885705", "NAME": "Winter Park", "NAMELSAD": "Winter Park town", "y": "39.8778206", "x": "-106.22", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.7828131, 39.8778206 ] } },
 { "type": "Feature", "properties": { "GEOID": "0886475", "NAME": "Yampa", "NAMELSAD": "Yampa town", "y": "40.08", "x": "-106.9084955", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -106.9084955, 40.1529957 ] } },
-{ "type": "Feature", "properties": { "GEOID": "0817375", "NAME": "Cortez", "NAMELSAD": "Cortez city", "y": "37.29", "x": "-108.57", "classes": "city map2a " }, "geometry": { "type": "Point", "coordinates": [ -108.5766870, 37.3497833 ] } }
+{ "type": "Feature", "properties": { "GEOID": "0817375", "NAME": "Cortez", "NAMELSAD": "Cortez city", "y": "37.29", "x": "-108.57", "classes": "city map2a " }, "geometry": { "type": "Point", "coordinates": [ -108.5766870, 37.3497833 ] } },
+
+{ "type": "Feature", "properties": { "GEOID": "0800925", "NAME": "Akron", "NAMELSAD": "Akron town", "y": "40.3", "x": "-103.2206849", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -103.2206849, 40.1643821 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0810105", "NAME": "Buena Vista", "NAMELSAD": "Buena Vista town", "y": "38.75", "x": "-106.1", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -106.1395147, 38.8293320 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0828745", "NAME": "Fruita", "NAMELSAD": "Fruita city", "y": "39.29", "x": "-108.86", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -108.7281959, 39.1539597 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0848115", "NAME": "Mancos", "NAMELSAD": "Mancos town", "y": "37.3465969", "x": "-108.6", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -108.2938563, 37.3465969 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0855980", "NAME": "Orchard City", "NAMELSAD": "Orchard City town", "y": "38.86", "x": "-108.39", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.9675415, 38.8140588 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0856860", "NAME": "Pagosa Springs", "NAMELSAD": "Pagosa Springs town", "y": "37.29", "x": "-106.55", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.0035304, 37.2636043 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0870250", "NAME": "Silver Cliff", "NAMELSAD": "Silver Cliff town", "y": "38.05", "x": "-105.3991892", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.3991892, 38.1292031 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0883230", "NAME": "Wellington", "NAMELSAD": "Wellington town", "y": "40.82", "x": "-105.0058254", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.0058254, 40.6993664 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0883450", "NAME": "Westcliffe", "NAMELSAD": "Westcliffe town", "y": "38.25", "x": "-105.4653063", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.4653063, 38.1342035 ] } }
+
+
+
+
+
 ]
 }
