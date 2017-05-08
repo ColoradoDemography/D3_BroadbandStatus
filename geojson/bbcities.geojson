@@ -4,7 +4,7 @@
                                                                                 
 "features": [
 { "type": "Feature", "properties": { "GEOID": "0886310", "NAME": "Wray", "NAMELSAD": "Wray city", "y": "39.98", "x": "-102.2286219", "classes": "city map2a map3 " }, "geometry": { "type": "Point", "coordinates": [ -102.22791576029131, 40.079914685191071 ] } },
-{ "type": "Feature", "properties": { "GEOID": "0855870", "NAME": "Ophir", "NAMELSAD": "Ophir town", "y": "37.86", "x": "-107.832977", "classes": "city map2a" }, "geometry": { "type": "Point", "coordinates": [ -107.832977, 37.855493 ] } },  
+{ "type": "Feature", "properties": { "GEOID": "0855870", "NAME": "Ophir", "NAMELSAD": "Ophir town", "y": "37.86", "x": "-107.832977", "classes": "city map2a" }, "geometry": { "type": "Point", "coordinates": [ -107.832977, 37.76 ] } },  
 { "type": "Feature", "properties": { "GEOID": "0845970", "NAME": "Longmont", "NAMELSAD": "Longmont city", "y": "40.20", "x": "-104.73", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.09932137153945, 40.169250177423116 ] } },
 { "type": "Feature", "properties": { "GEOID": "0851745", "NAME": "Montrose", "NAMELSAD": "Montrose city", "y": "38.40", "x": "-107.8606816", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.86068650795895, 38.469177056655468 ] } },
 { "type": "Feature", "properties": { "GEOID": "0807850", "NAME": "Boulder", "NAMELSAD": "Boulder city", "y": "40.10", "x": "-105.55", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.25132289334923, 40.027405615177109 ] } },
