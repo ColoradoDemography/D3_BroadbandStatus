@@ -4,6 +4,7 @@
                                                                                 
 "features": [
 { "type": "Feature", "properties": { "GEOID": "0886310", "NAME": "Wray", "NAMELSAD": "Wray city", "y": "39.98", "x": "-102.2286219", "classes": "city map2a map3 " }, "geometry": { "type": "Point", "coordinates": [ -102.22791576029131, 40.079914685191071 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0855870", "NAME": "Ophir", "NAMELSAD": "Ophir town", "y": "37.86", "x": "-107.832977", "classes": "city map2a" }, "geometry": { "type": "Point", "coordinates": [ -107.832977, 37.855493 ] } },  
 { "type": "Feature", "properties": { "GEOID": "0845970", "NAME": "Longmont", "NAMELSAD": "Longmont city", "y": "40.20", "x": "-104.73", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.09932137153945, 40.169250177423116 ] } },
 { "type": "Feature", "properties": { "GEOID": "0851745", "NAME": "Montrose", "NAMELSAD": "Montrose city", "y": "38.40", "x": "-107.8606816", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.86068650795895, 38.469177056655468 ] } },
 { "type": "Feature", "properties": { "GEOID": "0807850", "NAME": "Boulder", "NAMELSAD": "Boulder city", "y": "40.10", "x": "-105.55", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.25132289334923, 40.027405615177109 ] } },
@@ -28,7 +29,7 @@
 { "type": "Feature", "properties": { "GEOID": "0825115", "NAME": "Estes Park", "NAMELSAD": "Estes Park town", "y": "40.3", "x": "-105.5255142", "classes": "city map1b map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.5255142, 40.3771167 ] } },
 { "type": "Feature", "properties": { "GEOID": "0825610", "NAME": "Fairplay", "NAMELSAD": "Fairplay town", "y": "39.2237796", "x": "-105.70", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.9940054, 39.2237796 ] } },
 { "type": "Feature", "properties": { "GEOID": "0827425", "NAME": "Ft. Collins", "NAMELSAD": "Fort Collins city", "y": "40.66", "x": "-105.0648327", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.0648327, 40.5482164 ] } },
-{ "type": "Feature", "properties": { "GEOID": "0828305", "NAME": "Fraser", "NAMELSAD": "Fraser town", "y": "39.99", "x": "-106.05", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.8052860, 39.9233235 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0828305", "NAME": "Fraser", "NAMELSAD": "Fraser town", "y": "39.99", "x": "-106.05", "classes": "city map1a " }, "geometry": { "type": "Point", "coordinates": [ -105.8052860, 39.9233235 ] } },
 { "type": "Feature", "properties": { "GEOID": "0833640", "NAME": "Gunnison", "NAMELSAD": "Gunnison city", "y": "38.48", "x": "-106.9225511", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -106.9225511, 38.5454785 ] } },
 { "type": "Feature", "properties": { "GEOID": "0835070", "NAME": "Hayden", "NAMELSAD": "Hayden town", "y": "40.60", "x": "-107.18", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.2423106, 40.4852407 ] } },
 { "type": "Feature", "properties": { "GEOID": "0837545", "NAME": "Hotchkiss", "NAMELSAD": "Hotchkiss town", "y": "38.7990234", "x": "-107.7135945", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.7135945, 38.7990234 ] } },
@@ -41,7 +42,7 @@
 { "type": "Feature", "properties": { "GEOID": "0873825", "NAME": "Steamboat|Springs", "NAMELSAD": "Steamboat Springs city", "y": "40.4755865", "x": "-106.44", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -106.8229348, 40.4755865 ] } },
 { "type": "Feature", "properties": { "GEOID": "0876795", "NAME": "Telluride", "NAMELSAD": "Telluride town", "y": "37.9396640", "x": "-108.12", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -107.8178875, 37.9396640 ] } },
 { "type": "Feature", "properties": { "GEOID": "0877290", "NAME": "Thornton", "NAMELSAD": "Thornton city", "y": "39.85", "x": "-104.63", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -104.9428083, 39.9194198 ] } },
-{ "type": "Feature", "properties": { "GEOID": "0885705", "NAME": "Winter Park", "NAMELSAD": "Winter Park town", "y": "39.8778206", "x": "-106.22", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.7828131, 39.8778206 ] } },
+{ "type": "Feature", "properties": { "GEOID": "0885705", "NAME": "Winter Park", "NAMELSAD": "Winter Park town", "y": "39.8778206", "x": "-106.22", "classes": "city map1a " }, "geometry": { "type": "Point", "coordinates": [ -105.7828131, 39.8778206 ] } },
 { "type": "Feature", "properties": { "GEOID": "0886475", "NAME": "Yampa", "NAMELSAD": "Yampa town", "y": "40.08", "x": "-106.9084955", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -106.9084955, 40.1529957 ] } },
 { "type": "Feature", "properties": { "GEOID": "0817375", "NAME": "Cortez", "NAMELSAD": "Cortez city", "y": "37.29", "x": "-108.57", "classes": "city map2a " }, "geometry": { "type": "Point", "coordinates": [ -108.5766870, 37.3497833 ] } },
 
