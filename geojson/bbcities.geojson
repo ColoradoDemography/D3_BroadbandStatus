@@ -75,8 +75,8 @@
 { "type": "Feature", "properties": { "GEOID": "0875640", "NAME": "Superior", "NAMELSAD": "Superior town", "y": "39.9", "x": "-105.1590853", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.1590853, 39.9311898] } },
 { "type": "Feature", "properties": { "GEOID": "0880865", "NAME": "Victor", "NAMELSAD": "Victor town", "y": "38.7", "x": "-105.1418451", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.1418451, 38.7089964] } },
 { "type": "Feature", "properties": { "GEOID": "0886090", "NAME": "Woodland|Park", "NAMELSAD": "Woodland Park city", "y": "38.99", "x": "-105.0593021", "classes": "city map3 " }, "geometry": { "type": "Point", "coordinates": [ -105.0593021, 38.9990626] } },
-{ "type": "Feature", "properties": { "GEOID": "0862880", "NAME": "Rangley", "NAMELSAD": "Rangley town", "y": "40.08", "x": "-108.781789", "classes": "city map1 " }, "geometry": { "type": "Point", "coordinates": [ -108.781789, 40.183388] } },
-{ "type": "Feature", "properties": { "GEOID": "0849875", "NAME": "Meeker", "NAMELSAD": "Meeker town", "y": "40.04", "x": "-107.914113", "classes": "city map1 " }, "geometry": { "type": "Point", "coordinates": [ -107.914113, 40.149801] } }
+{ "type": "Feature", "properties": { "GEOID": "0862880", "NAME": "Rangley", "NAMELSAD": "Rangley town", "y": "40.01", "x": "-108.781789", "classes": "city map1 " }, "geometry": { "type": "Point", "coordinates": [ -108.781789, 40.083388] } },
+{ "type": "Feature", "properties": { "GEOID": "0849875", "NAME": "Meeker", "NAMELSAD": "Meeker town", "y": "39.96", "x": "-107.914113", "classes": "city map1 " }, "geometry": { "type": "Point", "coordinates": [ -107.914113, 40.039801] } }
 
 ]
 }
