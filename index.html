@@ -33,7 +33,8 @@
 
 	text.county {
 		font-family: Cambria, Georgia;
-		font-size: 8pt; 
+		font-size: 8pt;
+		font-style: italic;
 		fill: #444;   
 		pointer-events:none;
 	}
@@ -163,7 +164,8 @@
       <div id="linksplain"><b>Broadband Funding Status Maps</b></div>
       
       <div id="linkbar">
-        <span id="overview" class="titlebar" data-id="1" onclick="changeview(this.id);">Overview</span>
+        <span id="overview" class="titlebar" data-id="0" onclick="changeview(this.id);">Overview</span>
+        <span id="projectcompleted" class="titlebar" data-id="1" onclick="changeview(this.id);">Completed Projects</span>
         <span id="planscompleted" class="titlebar" data-id="1a" onclick="changeview(this.id);">Plans Completed</span>
         <span id="planprocessunderway" class="titlebar" data-id="1b" onclick="changeview(this.id);">Planning Process Underway</span>
         <span id="appinprocess" class="titlebar" data-id="1c" onclick="changeview(this.id);">Planning Application in Process</span>
@@ -201,395 +203,392 @@
       
       <div id="titlehead">DOLA Regional Broadband Partnerships</div>
 		
-        <script type="text/javascript">
+<script type="text/javascript">
           
 
           
-         function close_popup(){
-       var elem=document.getElementById('toolt');
-  elem.style.display='none';
+function close_popup(){
+    var elem=document.getElementById('toolt');
+    elem.style.display='none';
 }         
           
           
-  d3.selection.prototype.moveToFront = function() { 
+d3.selection.prototype.moveToFront = function() { 
     return this.each(function() { 
       this.parentNode.appendChild(this); 
     }); 
-  }; 
+}; 
           
-		//Width and height
-            var w = 700;
-            var h = 520;
+//Width and height
+var w = 700;
+var h = 520;
 			
-	//projection specific to Colorado
-	var projection = d3.geo.transverseMercator()
-	    .translate([(w / 2)-10, (h / 2)-15])
-		.scale(6500)
-	    .rotate([105.63, -39.18, 0])
-		.center([0, 0]);  
-								   
-            //Define path generator
-            var path = d3.geo.path()
-                             .projection(projection);
+//projection specific to Colorado
+var projection = d3.geo.transverseMercator()
+    .translate([(w / 2)-10, (h / 2)-15])
+	.scale(6500)
+    .rotate([105.63, -39.18, 0])
+	.center([0, 0]);  
+							   
+//Define path generator
+var path = d3.geo.path()
+                 .projection(projection);
 
-            //Create SVG element
-            var svg = d3.select("#svgcontainer")
-                        .append("svg")
-                        .attr("width", w)
-                        .attr("height", h);
+//Create SVG element
+var svg = d3.select("#svgcontainer")
+            .append("svg")
+            .attr("width", w)
+            .attr("height", h);
 
-			//create group element, add map
-			var map = svg.append("svg:g") 
-                .attr("id", "map")
-				.style("filter", "url(#dropshadow)");  //adds shadow to the state from definition in svgdefs
+//create group element, add map
+var map = svg.append("svg:g") 
+    .attr("id", "map")
+	.style("filter", "url(#dropshadow)");  //adds shadow to the state from definition in svgdefs
 
-      
-			//create group element, add map
-			var state = map.append("svg:g");
-          
-			//create group element, add map
-			var countymesh = map.append("svg:g");  
-          
-			//create group element for labels (created after map, so that it draws on top of map)	
-			var labels = svg.append("svg:g") 
-                .attr("id", "labels"); 	
-          
-          var reglabels= svg.append("svg:g") 
-                .attr("id", "reglabels"); 	
-          
-           var pts = svg.append("svg:g"); 	         
-				
-          var citylabels= svg.append("svg:g"); 	
 
-          var tooltip = d3.select('body').append('div')
-          .attr("id","toolt")
-  .style('position','absolute')
-  .style('padding','3px 13px')
-  .style('display', 'none')
+//create group element, add map
+var state = map.append("svg:g");
+
+//create group element, add map
+var countymesh = map.append("svg:g");  
+
+//create group element for labels (created after map, so that it draws on top of map)	
+var labels = svg.append("svg:g") 
+    .attr("id", "labels"); 	
+
+var reglabels= svg.append("svg:g") 
+    .attr("id", "reglabels"); 	
+
+var pts = svg.append("svg:g"); 	         
+	
+var citylabels= svg.append("svg:g"); 	
+
+var tooltip = d3.select('body').append('div')
+    .attr("id","toolt")
+    .style('position','absolute')
+    .style('padding','3px 13px')
+    .style('display', 'none')
           .style("color","#222")
-  .attr('class','tooltip');
+    .attr('class','tooltip');
           
-          function get_county_color(d){
+function get_county_color(d){
             
-           var county_name = d.properties.NAME;
+    var county_name = d.properties.NAME;
             
-            var ret_color=0;  //easy to see pieces not in switch
+    var ret_color=0;  //easy to see pieces not in switch
             
-switch (county_name) {
-    case 'Saguache':
-        ret_color = 6; break;
-    case 'Sedgwick':
-        ret_color = 11; break;
-    case 'Cheyenne':
-        ret_color = 10; break;
-    case 'Custer':
-        ret_color = 4; break;    
-    case 'La|Plata':
-        ret_color = 5; break;
-    case 'San|Juan':
-        ret_color = 5; break;    
-    case 'Pitkin':
-        ret_color = 1; break;
-    case 'Park':
-        ret_color = 4; break;
-     case 'Alamosa':
-        ret_color = 6; break;
-    case 'Prowers':
-        ret_color = 9; break;
-    case 'Moffat':
-        ret_color = 1; break;
-    case 'Jeff.':
-        ret_color = 13; break;
-    case 'Summit':
-        ret_color = 1; break;
-    case 'Pueblo':
-        ret_color = 7; break;    
-    case 'Boulder':
-        ret_color = 0; break;
-    case 'Denver':
-        ret_color = 0; break;    
-    case 'Montrose':
-        ret_color = 3; break;
-    case 'Eagle':
-        ret_color = 1; break;
-     case 'San Miguel':
-        ret_color = 3; break;
-    case 'Costilla':
-        ret_color = 6; break;    
-    case 'Broomfield':
-        ret_color = 0; break;
-    case 'Chaffee':
-        ret_color = 4; break;
-    case 'Crowley':
-        ret_color = 9; break;
-    case 'Fremont':
-        ret_color = 4; break;    
-    case 'Huerfano':
-        ret_color = 8; break;
-    case 'Delta':
-        ret_color = 3; break;    
-    case 'Garfield':
-        ret_color = 2; break;
-    case 'Rio Blanco':
-        ret_color = 1; break;
-     case 'Morgan':
-        ret_color = 11; break;
-    case 'Lincoln':
-        ret_color = 10; break;
-    case 'Montezuma':
-        ret_color = 5; break;
-    case 'Adams':
-        ret_color = 0; break;
-    case 'Mineral':
-        ret_color = 6; break;
-    case 'Otero':
-        ret_color = 9; break;    
-    case 'Phillips':
-        ret_color = 11; break;
-    case 'Ouray':
-        ret_color = 3; break;    
-    case 'Bent':
-        ret_color = 9; break;
-    case 'Archuleta':
-        ret_color = 5; break;
-     case 'Routt':
-        ret_color = 1; break;
-    case 'Hinsdale':
-        ret_color = 3; break;
-    case 'Weld':
-        ret_color = 11; break;
-    case 'Larimer':
-        ret_color = 13; break;
-    case 'Lake':
-        ret_color = 4; break;
-    case 'Rio|Grande':
-        ret_color = 6; break;    
-    case 'Gilpin':
-        ret_color = 13; break;
-    case 'Yuma':
-        ret_color = 11; break;    
-    case 'Jackson':
-        ret_color = 1; break;
-    case 'Kit|Carson':
-        ret_color = 10; break;
-     case 'Clear|Creek':
-        ret_color = 13; break;
-    case 'Logan':
-        ret_color = 11; break;
-    case 'Washington':
-        ret_color = 11; break;
-    case 'Douglas':
-        ret_color = 0; break;
-    case 'Conejos':
-        ret_color = 6; break;
-    case 'El|Paso':
-        ret_color = 10; break;    
-    case 'Kiowa':
-        ret_color = 9; break;
-    case 'Teller':
-        ret_color = 12; break;    
-    case 'Gunnison':
-        ret_color = 3; break;
-    case 'Baca':
-        ret_color = 9; break;
-     case 'Elbert':
-        ret_color = 10; break;
-    case 'Mesa':
-        ret_color = 2; break;
-    case 'Dolores':
-        ret_color = 5; break;
-    case 'Arapahoe':
-        ret_color = 0; break;
-    case 'Las|Animas':
-        ret_color = 8; break;
-    case 'Grand':
-        ret_color = 1; break;    
+    switch (county_name) {
+        case 'Saguache':
+            ret_color = 6; break;
+        case 'Sedgwick':
+            ret_color = 11; break;
+        case 'Cheyenne':
+            ret_color = 10; break;
+        case 'Custer':
+            ret_color = 4; break;    
+        case 'La|Plata':
+            ret_color = 5; break;
+        case 'San|Juan':
+            ret_color = 5; break;    
+        case 'Pitkin':
+            ret_color = 1; break;
+        case 'Park':
+            ret_color = 4; break;
+        case 'Alamosa':
+            ret_color = 6; break;
+        case 'Prowers':
+            ret_color = 9; break;
+        case 'Moffat':
+            ret_color = 1; break;
+        case 'Jeff.':
+            ret_color = 13; break;
+        case 'Summit':
+            ret_color = 1; break;
+        case 'Pueblo':
+            ret_color = 7; break;    
+        case 'Boulder':
+            ret_color = 0; break;
+        case 'Denver':
+            ret_color = 0; break;    
+        case 'Montrose':
+            ret_color = 3; break;
+        case 'Eagle':
+            ret_color = 1; break;
+        case 'San Miguel':
+            ret_color = 3; break;
+        case 'Costilla':
+            ret_color = 6; break;    
+        case 'Broomfield':
+            ret_color = 0; break;
+        case 'Chaffee':
+            ret_color = 4; break;
+        case 'Crowley':
+            ret_color = 9; break;
+        case 'Fremont':
+            ret_color = 4; break;    
+        case 'Huerfano':
+            ret_color = 8; break;
+        case 'Delta':
+            ret_color = 3; break;    
+        case 'Garfield':
+            ret_color = 2; break;
+        case 'Rio Blanco':
+            ret_color = 1; break;
+        case 'Morgan':
+            ret_color = 11; break;
+        case 'Lincoln':
+            ret_color = 10; break;
+        case 'Montezuma':
+            ret_color = 5; break;
+        case 'Adams':
+            ret_color = 0; break;
+        case 'Mineral':
+            ret_color = 6; break;
+        case 'Otero':
+            ret_color = 9; break;    
+        case 'Phillips':
+            ret_color = 11; break;
+        case 'Ouray':
+            ret_color = 3; break;    
+        case 'Bent':
+            ret_color = 9; break;
+        case 'Archuleta':
+            ret_color = 5; break;
+        case 'Routt':
+            ret_color = 1; break;
+        case 'Hinsdale':
+            ret_color = 3; break;
+        case 'Weld':
+            ret_color = 11; break;
+        case 'Larimer':
+            ret_color = 13; break;
+        case 'Lake':
+            ret_color = 4; break;
+        case 'Rio|Grande':
+            ret_color = 6; break;    
+        case 'Gilpin':
+            ret_color = 13; break;
+        case 'Yuma':
+            ret_color = 11; break;    
+        case 'Jackson':
+            ret_color = 1; break;
+        case 'Kit|Carson':
+            ret_color = 10; break;
+        case 'Clear|Creek':
+            ret_color = 13; break;
+        case 'Logan':
+            ret_color = 11; break;
+        case 'Washington':
+            ret_color = 11; break;
+        case 'Douglas':
+            ret_color = 0; break;
+        case 'Conejos':
+            ret_color = 6; break;
+        case 'El|Paso':
+            ret_color = 12; break;    
+        case 'Kiowa':
+            ret_color = 9; break;
+        case 'Teller':
+            ret_color = 12; break;    
+        case 'Gunnison':
+            ret_color = 3; break;
+        case 'Baca':
+            ret_color = 9; break;
+        case 'Elbert':
+            ret_color = 10; break;
+        case 'Mesa':
+            ret_color = 2; break;
+        case 'Dolores':
+            ret_color = 5; break;
+        case 'Arapahoe':
+            ret_color = 0; break;
+        case 'Las|Animas':
+            ret_color = 8; break;
+        case 'Grand':
+            ret_color = 1; break;    
+    
+    }
+            
 
+    if(ret_color==0){return 'white';}
+    if(ret_color==1){return 'rgb(202,178,214)';}
+    if(ret_color==2){return 'rgb(205,170,102)';}
+    if(ret_color==3){return 'rgb(254,252,55)';}
+    if(ret_color==4){return 'rgb(31,120,180)';}
+    if(ret_color==5){return 'rgb(166,206,227)';}
+    if(ret_color==6){return 'rgb(178,223,138)';}
+    if(ret_color==7){return 'rgb(114,90,150)';}
+    if(ret_color==8){return 'rgb(255,127,0)';}      
+    if(ret_color==9){return 'rgb(51,160,44)';}
+    if(ret_color==10){return 'rgb(253,191,111)';}                  
+    if(ret_color==11){return 'rgb(251,154,153)';}
+    if(ret_color==12){return 'rgb(255,255,153)';}     
+    if(ret_color==13){return 'url(#pattern-stripe)';}                 
+    
 }
-            
-
-            if(ret_color==0){return 'white';}
-            if(ret_color==1){return 'rgb(202,178,214)'};
-            if(ret_color==2){return 'rgb(205,170,102)';}
-            if(ret_color==3){return 'rgb(254,252,55)';}
-            if(ret_color==4){return 'rgb(31,120,180)';}
-            if(ret_color==5){return 'rgb(166,206,227)';}
-            if(ret_color==6){return 'rgb(178,223,138)';}
-            if(ret_color==7){return 'rgb(114,90,150)';}
-            if(ret_color==8){return 'rgb(255,127,0)';}      
-            if(ret_color==9){return 'rgb(51,160,44)';}
-            if(ret_color==10){return 'rgb(253,191,111)';}                  
-            if(ret_color==11){return 'rgb(251,154,153)';}
-            if(ret_color==12){return 'rgb(255,255,153)';}     
-            if(ret_color==13){return 'url(#pattern-stripe)';}                 
-            
-          }
 
           
             //Load in GeoJSON data
-            d3.json("geojson/County.geojson", function(json) {
-			
-                //Bind data and create one path per GeoJSON feature
-                map.selectAll("path")
-                   .data(json.features)
-                   .enter()
-                   .append("path")
-                   .attr("d", path)
-                .style("fill", function(d){return get_county_color(d);})
-                .style("fill-opacity", "1")
-                .style("stroke-dasharray", "(3,3)")
-                .style("stroke-width", "0.5px")         
-                .style("stroke", "rgb(150,150,150)")                   
-                .attr("class", function(d) { return d.properties.classes; })
-                .on("mouseover",function(){
+d3.json("geojson/County.geojson", function(json) {
+
+    //Bind data and create one path per GeoJSON feature
+    map.selectAll("path")
+       .data(json.features)
+       .enter()
+       .append("path")
+       .attr("d", path)
+    .style("fill", function(d){return get_county_color(d);})
+    .style("fill-opacity", "1")
+    .style("stroke-dasharray", "(3,3)")
+    .style("stroke-width", "0.5px")         
+    .style("stroke", "rgb(150,150,150)")                   
+    .attr("class", function(d) { return d.properties.classes; })
+    .on("mouseover",function(){
 
                   //jenky workaround for ie losing mouseover events when svg element is moved to front
                   //ie test
-    var ms_ie = false;
-    var ua = window.navigator.userAgent;
-    var old_ie = ua.indexOf('MSIE ');
-    var new_ie = ua.indexOf('Trident/');
-
-    if ((old_ie > -1) || (new_ie > -1)) {
-        ms_ie = true;
-    }
-
-    if( ms_ie ){
-        //IE specific code goes here
-    }else{
-      var sel = d3.select(this);
-      sel.moveToFront();
-    }
-
-      d3.select(this).style("stroke-dasharray", "(0,0)");
-      d3.select(this).style("stroke", "rgb(0,0,0)");    
-      d3.select(this).style("stroke-width", "2px");
+        var ms_ie = false;
+        var ua = window.navigator.userAgent;
+        var old_ie = ua.indexOf('MSIE ');
+        var new_ie = ua.indexOf('Trident/');
+    
+        if ((old_ie > -1) || (new_ie > -1)) {
+            ms_ie = true;
+        }
+    
+        if( ms_ie ){
+            //IE specific code goes here
+        }else{
+          var sel = d3.select(this);
+          sel.moveToFront();
+        }
+    
+          d3.select(this).style("stroke-dasharray", "(0,0)");
+          d3.select(this).style("stroke", "rgb(0,0,0)");    
+          d3.select(this).style("stroke-width", "2px");
                   
     })
-              .on("mouseout",function(){
+    .on("mouseout",function(){
       d3.select(this).style("stroke-dasharray", "(3,3)");
       d3.select(this).style("stroke", "rgb(150,150,150)");    
       d3.select(this).style("stroke-width", "0.5px");
     })
     .on('click' , function(d){ click_sub(d); });
 				   
-
-              
 				//add label for each feature   
-				labels.selectAll("text") 
-					.data(json.features) 
-					.enter()
-					.append("text") 
-					.attr("class", function(d) { return d.properties.classes; })
-					.attr("text-anchor", "middle")
-					.text(function(d){return d.properties.NAME;}) 
-					.attr("x", function(d){return projection([d.properties.x,d.properties.y])[0];}) 
-					.attr("y", function(d){return projection([d.properties.x,d.properties.y])[1];}) 
-					.attr("dy", "0.5em");   	   
-              
-				   var insertLinebreaks = function (d) {
-    var el = d3.select(this);
-    var words = d.properties.NAME.split('|');
-    el.text('');
+	labels.selectAll("text") 
+		.data(json.features) 
+		.enter()
+		.append("text") 
+		.attr("class", function(d) { return d.properties.classes; })
+		.attr("text-anchor", "middle")
+		.text(function(d){return d.properties.NAME;}) 
+		.attr("x", function(d){return projection([d.properties.x,d.properties.y])[0];}) 
+		.attr("y", function(d){return projection([d.properties.x,d.properties.y])[1];}) 
+		.attr("dy", "0.5em");   	   
+  
+    var insertLinebreaks = function (d) {
+        var el = d3.select(this);
+        var words = d.properties.NAME.split('|');
+        el.text('');
+    
+        for (var i = 0; i < words.length; i++) {
+            var tspan = el.append('tspan').text(words[i]);
+            if (i > 0)
+                tspan.attr('x', projection([d.properties.x,d.properties.y])[0]).attr('dy', '10');
+        }
+    };
 
-    for (var i = 0; i < words.length; i++) {
-        var tspan = el.append('tspan').text(words[i]);
-        if (i > 0)
-            tspan.attr('x', projection([d.properties.x,d.properties.y])[0]).attr('dy', '10');
-    }
-};
-
-         svg.selectAll('text').each(insertLinebreaks);
+    svg.selectAll('text').each(insertLinebreaks);
               
-              d3.json("geojson/broadbandreg.geojson", function(gjson) {
+    d3.json("geojson/broadbandreg.geojson", function(gjson) {
                 
          //add label for each feature   
-				reglabels.selectAll("text") 
-					.data(gjson.features) 
-					.enter()
-					.append("text") 
-					.attr("class", function(d){return d.properties.classes;})
-					.attr("text-anchor", "middle")
-					.text(function(d){return d.properties.rname;}) 
-					.attr("x", function(d){return projection([d.properties.x,d.properties.y])[0];}) 
-					.attr("y", function(d){return projection([d.properties.x,d.properties.y])[1];}) 
-					.attr("dy", "0.5em");   	   
+		reglabels.selectAll("text") 
+			.data(gjson.features) 
+			.enter()
+			.append("text") 
+			.attr("class", function(d){return d.properties.classes;})
+			.attr("text-anchor", "middle")
+			.text(function(d){return d.properties.rname;}) 
+			.attr("x", function(d){return projection([d.properties.x,d.properties.y])[0];}) 
+			.attr("y", function(d){return projection([d.properties.x,d.properties.y])[1];}) 
+			.attr("dy", "0.5em");   	   
                 
                 
-    var insertLinebreaks2 = function (d) {
-    var el = d3.select(this);
-    var words = d.properties.rname.split('|');
-    el.text('');
+        var insertLinebreaks2 = function (d) {
+            var el = d3.select(this);
+            var words = d.properties.rname.split('|');
+            el.text('');
+        
+            for (var i = 0; i < words.length; i++) {
+                var tspan = el.append('tspan').text(words[i]);
+                if (i > 0)
+                    tspan.attr('x', projection([d.properties.x,d.properties.y])[0]).attr('dy', '17');
+            }
+        };
 
-    for (var i = 0; i < words.length; i++) {
-        var tspan = el.append('tspan').text(words[i]);
-        if (i > 0)
-            tspan.attr('x', projection([d.properties.x,d.properties.y])[0]).attr('dy', '17');
-    }
-};
-
-svg.selectAll('.region-label').each(insertLinebreaks2);
+        svg.selectAll('.region-label').each(insertLinebreaks2);
                 
-                   d3.json("geojson/state.geojson", function(gg) {
+        d3.json("geojson/state.geojson", function(gg) {
    
-                state.selectAll("path")
-                   .data(gg.features)
-                   .enter()
-                   .append("path")
-                   .attr("d", path)
-                .classed("stateoutline", true);
-                     
-                d3.json("geojson/County.geojson", function(cm) {
-                countymesh.selectAll("path")
-                   .data(cm.features)
-                   .enter()
-                   .append("path")
-                   .attr("d", path)
-                .classed("countymesh", true);
-                  
-                 d3.json("geojson/bbcities.geojson", function(pt) {
-           pts.selectAll("circle")
-               .data(pt.features)
+            state.selectAll("path")
+               .data(gg.features)
                .enter()
-               .append("circle")
-               .attr("r", 6)
-               .attr("transform", function(d, i) {
-                   return "translate(" + projection(pt.features[i].geometry.coordinates) + ")";
-                })
-               .style("fill", "DarkRed")
-               .on('mouseover' ,  function(d){d3.select(this).style("fill", "blue");})
-               .on('mouseout' ,  function(d){d3.select(this).style("fill", "DarkRed");})           
-					      .attr("class", function(d){return d.properties.classes;})
-               .on('click' , function(d){ click_sub(d); });
-                   
-                   
-          //add label for each feature   
-				citylabels.selectAll("text") 
-					.data(pt.features) 
-					.enter()
-					.append("text") 
-					.attr("class", function(d){return d.properties.classes;})
-					.attr("text-anchor", "middle")
-					.text(function(d){return d.properties.NAME;}) 
-					.attr("x", function(d){return projection([d.properties.x,d.properties.y])[0];}) 
-					.attr("y", function(d){return projection([d.properties.x,d.properties.y])[1];}) 
-					.attr("dy", "0.5em");   	                   
-                   
-                   citylabels.selectAll('text').each(insertLinebreaks);
-                   //kick it
-                  
-                   changeview("overview");
-                   
-                });   
-                   
-                  
-                });                                         
+               .append("path")
+               .attr("d", path)
+            .classed("stateoutline", true);
                      
-                });                   
-                
-              });
+            d3.json("geojson/County.geojson", function(cm) {
+            countymesh.selectAll("path")
+                .data(cm.features)
+                .enter()
+                .append("path")
+                .attr("d", path)
+                .classed("countymesh", true);
               
-            });
+                d3.json("geojson/bbcities.geojson", function(pt) {
+                    pts.selectAll("circle")
+                       .data(pt.features)
+                       .enter()
+                       .append("circle")
+                       .attr("r", 6)
+                       .attr("transform", function(d, i) {
+                           return "translate(" + projection(pt.features[i].geometry.coordinates) + ")";
+                        })
+                       .style("fill", "DarkRed")
+                       .on('mouseover' ,  function(d){d3.select(this).style("fill", "blue");})
+                       .on('mouseout' ,  function(d){d3.select(this).style("fill", "DarkRed");})           
+        					      .attr("class", function(d){return d.properties.classes;})
+                       .on('click' , function(d){ click_sub(d); });
+                   
+                   
+              //add label for each feature   
+    				citylabels.selectAll("text") 
+    					.data(pt.features) 
+    					.enter()
+    					.append("text") 
+    					.attr("class", function(d){return d.properties.classes;})
+    					.attr("text-anchor", "middle")
+    					.text(function(d){return d.properties.NAME;}) 
+    					.attr("x", function(d){return projection([d.properties.x,d.properties.y])[0];}) 
+    					.attr("y", function(d){return projection([d.properties.x,d.properties.y])[1];}) 
+    					.attr("dy", "0.5em");   	                   
+                       
+                    citylabels.selectAll('text').each(insertLinebreaks);
+                       //kick it
+                      
+                    changeview("overview");
+                       
+                });   
+              
+            });                                         
+                     
+        });                   
+                
+    });
+              
+});
 			
 
 function changeview(elemid){
@@ -597,6 +596,7 @@ function changeview(elemid){
   close_popup();
 
   document.getElementById("overview").className = "titlebar";
+  document.getElementById("projectcompleted").className = "titlebar";
   document.getElementById("planscompleted").className = "titlebar";
   document.getElementById("planprocessunderway").className = "titlebar";
   document.getElementById("appinprocess").className = "titlebar";
@@ -612,9 +612,13 @@ function changeview(elemid){
   d3.selectAll(".city").style("visibility","hidden");  
   
         if(elemid=="overview"){
+          d3.selectAll(".map0").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Overview";
+        }
+        if(elemid=="projectcompleted"){
           d3.selectAll(".map1").style("visibility","visible");
-          document.getElementById("titlehead").innerHTML = "Overview of Lit Communities";
-          }
+          document.getElementById("titlehead").innerHTML = "Completed Projects December, 2018";
+        }  
         if(elemid=="planscompleted"){
           d3.selectAll(".map1a").style("visibility","visible");
           document.getElementById("titlehead").innerHTML = "Plans Completed";
@@ -648,107 +652,107 @@ function changeview(elemid){
           
           
           
-             function numberToCurrency(amount) {
+function numberToCurrency(amount) {
 
-        var thousandsSeparator = ","
-        var currencyNum = "";
-        var amountString = amount.toString();
-        var digits = amountString.split("");
+    var thousandsSeparator = ",";
+    var currencyNum = "";
+    var amountString = amount.toString();
+    var digits = amountString.split("");
 
-        var countDigits = digits.length;
-        var revDigits = digits.reverse();
+    var countDigits = digits.length;
+    var revDigits = digits.reverse();
 
-        for(var i=0; i<countDigits; i++) {
-            if ((i%3 == 0) && (i !=0)) {
-                currencyNum += thousandsSeparator+revDigits[i];
-            } else {
-                currencyNum += digits[i];
-            }
-        };
-
-        var revCurrency = currencyNum.split("").reverse().join("");
-
-        var finalCurrency = "$"+revCurrency;
-
-        return finalCurrency;
+    for(var i=0; i<countDigits; i++) {
+        if ((i%3 == 0) && (i !=0)) {
+            currencyNum += thousandsSeparator+revDigits[i];
+        } else {
+            currencyNum += digits[i];
+        }
     }
+
+    var revCurrency = currencyNum.split("").reverse().join("");
+
+    var finalCurrency = "$"+revCurrency;
+
+    return finalCurrency;
+}
           
   
 			//this is the OnClick function. 
-			function click_sub(d){
-        var ar, i, j;
-        var popupstring="";
-        var subt;  //subtract digits (5) for place or (3) for county
+function click_sub(d){
+    var ar, i, j;
+    var popupstring="";
+    var subt;  //subtract digits (5) for place or (3) for county
+    
+    //shorten 5 digit to 3 digit: 08031 to 031
+    
         
-        //shorten 5 digit to 3 digit: 08031 to 031
-        
-            
-        var id=d.properties.GEOID;
-        
-        if(id.length==5){subt=3;}else{subt=5;}
-        
-        var fips=id.substr(id.length-subt);
+    var id=d.properties.GEOID;
+    
+    if(id.length==5){subt=3;}else{subt=5;}
+    
+    var fips=id.substr(id.length-subt);
 
-        //loop through broadband json file.  find records with ids that match fips
-        for(i=0;i<broadband.length;i=i+1){
-          ar = broadband[i].ids;
-          for(j=0;j<ar.length;j=j+1){
-            if(fips===ar[j]){
-              popupstring=popupstring+"<span title='"+broadband[i].description+"'><b><span>"+broadband[i].atype + "</span><br /><span class='red'>"+broadband[i].projname + "</span></b><br />"+broadband[i].applicanttitle+"<br/><b>Date:</b> "+broadband[i].dateofaward+"&nbsp;&nbsp;&nbsp;<b>#</b> "+broadband[i].projectnmbr+"<br /><b>Award:</b> "+numberToCurrency(broadband[i].totalawarded)+"&nbsp;&nbsp;&nbsp;<b>Match:</b> "+numberToCurrency(broadband[i].matchingfunds)+"</span><br /><br />";
-            }
-          }
+    //loop through broadband json file.  find records with ids that match fips
+    for(i=0;i<broadband.length;i=i+1){
+      ar = broadband[i].ids;
+      for(j=0;j<ar.length;j=j+1){
+        if(fips===ar[j]){
+          popupstring=popupstring+"<span title='"+broadband[i].description+"'><b><span>"+broadband[i].atype + "</span><br /><span class='red'>"+broadband[i].projname + "</span></b><br />"+broadband[i].applicanttitle+"<br/><b>Date:</b> "+broadband[i].dateofaward+"&nbsp;&nbsp;&nbsp;<b>#</b> "+broadband[i].projectnmbr+"<br /><b>Award:</b> "+numberToCurrency(broadband[i].totalawarded)+"&nbsp;&nbsp;&nbsp;<b>Match:</b> "+numberToCurrency(broadband[i].matchingfunds)+"</span><br /><br />";
         }
+      }
+    }
         
        
-              var elem=document.getElementById('toolt');
-              elem.style.display='block';
+    var elem=document.getElementById('toolt');
+    elem.style.display='block';
         
-        if(popupstring==""){popupstring="<p>None</p>";}
+    if(popupstring==""){popupstring="<p>None</p>";}
         
         
 
         
-      tooltip.html("<br />" + popupstring)
+    tooltip.html("<br />" + popupstring)
         .style('top', d3.event.pageY + 'px');
      
 
         
         
         
-        var tooltipwidth=tooltip[0][0].clientWidth;
-        var offset=0; //to prevent from tooltip extending off viewable area (drupal iframe page width of 900px)
-        var voffset=0; //vertical offset
-        
-        if((d3.event.pageX+tooltipwidth)>900){
-          //console.log(d3.event.pageX);
-          //console.log(tooltipwidth);
-         
-          offset=895-(d3.event.pageX+tooltipwidth);
-          //console.log(offset);
-        }
-        
-  
-        var tooltipheight=tooltip[0][0].clientHeight;
-        
-        if((d3.event.pageY+tooltipheight)>650){
-          //console.log(d3.event.pageY);
-          //console.log(tooltipheight);
-         
-          voffset=600-(d3.event.pageY+tooltipheight);
-          //console.log(voffset);
-        }
-        
-        
-        
-          tooltip.style('left', d3.event.pageX+offset + 'px');
-          tooltip.style('top', d3.event.pageY+voffset + 'px');
-        
-          tooltip.append('img').attr('id','closebtn').style('position','absolute').style('top','5px').style('right','5px').attr('src','img/closebtn.png').attr('onclick','close_popup();');
-			}		
+    var tooltipwidth=tooltip[0][0].clientWidth;
+    var offset=0; //to prevent from tooltip extending off viewable area (drupal iframe page width of 900px)
+    var voffset=0; //vertical offset
+    
+    if((d3.event.pageX+tooltipwidth)>900){
+      //console.log(d3.event.pageX);
+      //console.log(tooltipwidth);
+     
+      offset=895-(d3.event.pageX+tooltipwidth);
+      //console.log(offset);
+    }
+    
+
+    var tooltipheight=tooltip[0][0].clientHeight;
+    
+    if((d3.event.pageY+tooltipheight)>650){
+      //console.log(d3.event.pageY);
+      //console.log(tooltipheight);
+     
+      voffset=600-(d3.event.pageY+tooltipheight);
+      //console.log(voffset);
+    }
+    
+    
+    
+    tooltip.style('left', d3.event.pageX+offset + 'px');
+    tooltip.style('top', d3.event.pageY+voffset + 'px');
+    
+    tooltip.append('img').attr('id','closebtn').style('position','absolute').style('top','5px').style('right','5px').attr('src','img/closebtn.png').attr('onclick','close_popup();');
+}		
 
 
           
-        </script>
+</script>
 
-    </body>
+</body>
 </html>
