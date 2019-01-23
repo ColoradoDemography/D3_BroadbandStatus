@@ -1027,6 +1027,90 @@ var broadband = [
         "description": "Larimer County Strategic Broadband Plan",
         "monitor": "Winkler, Greg",
         "matchingfunds": 47000
+    },
+    
+    {
+        "ids": ["019","117","049","057","107","081","103","045","037","097"],
+        "atype": "-Participant-",
+        "programtype": "EIAF",
+        "projectnmbr": 8805, //change when record in Oracle
+        "projname": "Region 12 Broadband Project THOR",
+        "applicanttitle": "Northwest Colorado Council of Governments",
+        "county": "Multi",
+        "executiondate": "",
+        "dateofaward": "2019-01-09",
+        "yearofaward": 2019,
+        "totalawarded": 1000000,
+        "amtseverance": null,
+        "amtmineral": null,
+        "regionmanager": "Greg Winkler",
+        "projecttype": "BROADBAND",
+        "description": "",
+        "monitor": "Winkler, Greg",
+        "matchingfunds": 1571873
+    },
+
+
+    {
+        "ids": ["08400"],
+        "atype": "-Singular Award-",
+        "county": "Summit",
+        "regionmanager": "Greg Winkler",
+        "projectnmbr": 8692,
+        "programtype": "EIAF",
+        "projecttype": "BROADBAND",
+        "projname": "Town of Breckenridge Broadband Plan",
+        "description": "",
+        "applicanttitle": "Town of Breckenridge",
+        "dateofaward": "2018-03-26",
+        "yearofaward": 2018,
+        "executiondate": "",
+        "totalawarded": 22925,
+        "amtseverance": 0,
+        "amtmineral": 0,
+        "matchingfunds": 22924
+    },
+    
+    {
+        "ids": ["045","097"],
+        "atype": "-Joint Award-",
+        "programtype": "EIAF",
+        "projectnmbr": 8744,
+        "projname": "Garfield and Pitkin Counties Broadband Plan",
+        "applicanttitle": "Garfield and Pitkin Counties",
+        "county": "Multi",
+        "executiondate": null,
+        "dateofaward": "2018-10-17",
+        "yearofaward": 2018,
+        "totalawarded": 1055898,
+        "amtseverance": 0,
+        "amtmineral": 0,
+        "regionmanager": "Elyse Ackerman",
+        "projecttype": "BROADBAND",
+        "description": "",
+        "monitor": "Winkler, Greg",
+        "matchingfunds": 1283398
+    },
+
+    {
+        "ids": ["037"],
+        "atype": "-Singular Award-",
+        "programtype": "EIAF",
+        "projectnmbr": 0038,
+        "projname": "Eagle County/Eagle/Gypsum Broadband Plan",
+        "applicanttitle": "Eagle County/Eagle/Gypsum",
+        "county": "Eagle",
+        "dateofaward": "2019-01-18",
+        "yearofaward": 2019,
+        "totalawarded": 18250,
+        "amtseverance": 0,
+        "amtmineral": 0,
+        "regionmanager": "Greg Winkler",
+        "lgid": "19011",
+        "projecttype": "BROADBAND",
+        "description": " ",
+        "monitor": "Winkler, Greg",
+        "matchingfunds": 18250
     }
     
     
