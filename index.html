@@ -166,6 +166,7 @@
       <div id="linkbar">
         <span id="overview" class="titlebar" data-id="0" onclick="changeview(this.id);">Overview</span>
         <span id="projectcompleted" class="titlebar" data-id="1" onclick="changeview(this.id);">Completed Projects</span>
+        <span id="plansupdated" class="titlebar" data-id="1e" onclick="changeview(this.id);">Updated Plans</span>  
         <span id="planscompleted" class="titlebar" data-id="1a" onclick="changeview(this.id);">Plans Completed</span>
         <span id="planprocessunderway" class="titlebar" data-id="1b" onclick="changeview(this.id);">Planning Process Underway</span>
         <span id="appinprocess" class="titlebar" data-id="1c" onclick="changeview(this.id);">Planning Application in Process</span>
@@ -597,6 +598,7 @@ function changeview(elemid){
 
   document.getElementById("overview").className = "titlebar";
   document.getElementById("projectcompleted").className = "titlebar";
+  document.getElementById("plansupdated").className = "titlebar";
   document.getElementById("planscompleted").className = "titlebar";
   document.getElementById("planprocessunderway").className = "titlebar";
   document.getElementById("appinprocess").className = "titlebar";
@@ -618,7 +620,11 @@ function changeview(elemid){
         if(elemid=="projectcompleted"){
           d3.selectAll(".map1").style("visibility","visible");
           document.getElementById("titlehead").innerHTML = "Completed Projects December, 2018";
-        }  
+        } 
+        if(elemid=="plansupdated"){
+          d3.selectAll(".map1e").style("visibility","visible");
+          document.getElementById("titlehead").innerHTML = "Updated Plans";
+        }
         if(elemid=="planscompleted"){
           d3.selectAll(".map1a").style("visibility","visible");
           document.getElementById("titlehead").innerHTML = "Plans Completed";
